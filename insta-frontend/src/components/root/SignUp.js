@@ -5,7 +5,8 @@ class SignUp extends Component {
     username: "",
     email: "",  
     phoneNum: null,
-    password: ""
+    password: "",
+    image: null
   }
 
   handleOnChange = (event) => {
@@ -14,6 +15,11 @@ class SignUp extends Component {
     })
   }
 
+  handleOnImage = (event) => {
+    this.setState({
+      image: event.target.files[0]
+    })
+  }
   handleOnSubmit = (event) => {
     event.preventDefault()
     // this.props.addUser(this.State)
@@ -21,7 +27,8 @@ class SignUp extends Component {
       username: "",
       email: "",  
       phoneNum: null,
-      password: ""
+      password: "",
+      image:null
     })
   }
 
@@ -30,13 +37,15 @@ class SignUp extends Component {
       <div>
         <form onSubmit={this.handleOnSubmit}>
             <label>User Name</label>
-            <input type="text" name="" onChange={this.handleOnChange}/>
+            <input type="text" name="username" onChange={this.handleOnChange}/>
             <label>Email</label>
-            <input type="text" name="" onChange={this.handleOnChange}/>
+            <input type="text" name="email" onChange={this.handleOnChange}/>
             <label>Number</label>
-            <input type="number"name="" onChange={this.handleOnChange}/>
+            <input type="number"name="phoneNum" onChange={this.handleOnChange}/>
+            <label>Image</label>
+            <input type="file" onChange={this.handleOnImage} name="image"/>
             <label>password</label>
-            <input type="password" name="" onChange={this.handleOnChange}/>
+            <input type="password" name="password" onChange={this.handleOnChange}/>
             <input type="submit" />
           </form>
       </div>
