@@ -2,19 +2,39 @@ import React, { Component } from 'react'
 // import SignUp from './SignUp'
 class LandingPage extends Component {
   
-  handleOnSingUp = (event) =>{
-    console.log(event)
+  state = {
+    number:null,
+    password:""
   }
+
+  handleOnChange = (event) =>{
+    this.setState({
+      [event.target.name]: event.taget.value
+    })
+  }
+
+  handleOnSubmit = (event) =>{
+    event.preventDEfault()
+    // import action
+    this.setState({
+      number: null,
+      password: ""
+    })
+  }
+
+  // handleOnSingUp = (event) =>{
+  //   console.log(event)
+  // }
 
   render() {
     
     return(
       <div>
-        <form>
+        <form onSubmit={this.handleOnSubmit}>
           <label>Number</label>
-          <input type="number"/>
+          <input type="number" name="number" onChange={this.handleOnChange}/>
           <label>password</label>
-          <input type="password" />
+          <input type="password" name="password" onChange={this.handleOnChange}/>
           <input type="submit" />
         </form>
         <button>sign Up</button>
