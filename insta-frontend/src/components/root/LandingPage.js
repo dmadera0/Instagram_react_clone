@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import SignUp from './SignUp'
+import SignUp from './SignUp'
 class LandingPage extends Component {
   
   state = {
@@ -38,6 +38,7 @@ class LandingPage extends Component {
           <input type="submit" />
         </form>
         <button>sign Up</button>
+        <SignUp />
       </div>
     )
   }
