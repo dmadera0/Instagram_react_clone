@@ -37,11 +37,11 @@ class PostInput extends Component {
       <h>Create Post</h>
       <form onSubmit={this.handleOnSubmit}>
         <label>Location</label>
-        <input type="text" onChange={} name="location"/>
+        <input type="text" onChange={this.handleOnChange} name="location"/>
         <label>Image:</label>
         <input type="file" onChange={this.handleOnImage} name="image" name="image"/>
         <label>Content</label>
-        <input type="text" onChange={} name="content"/>
+        <input type="text" onChange={this.handleOnChange} name="content"/>
         {/* <input 
             type="hidden" 
             value={user_id}

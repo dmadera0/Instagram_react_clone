@@ -1,12 +1,16 @@
 import React from 'react';
-import LandingPage from './components/root/LandingPage'
+// import LandingPage from './components/root/LandingPage'
+import Posts from './components/posts/Posts'
+import PostsInput from './components/posts/PostInput'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <p>Instagram</p>
-      < LandingPage />
+      {/* < LandingPage /> */}
+      < Posts />
+      < PostsInput />
     </div>
   );
 }
