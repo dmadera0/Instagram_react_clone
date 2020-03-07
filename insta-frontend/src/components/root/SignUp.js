@@ -35,6 +35,7 @@ class SignUp extends Component {
   render(){
     return(
       <div>
+        <h1>Sign Up!</h1>
         <form onSubmit={this.handleOnSubmit}>
             <label>User Name</label>
             <input type="text" name="username" onChange={this.handleOnChange}/>
