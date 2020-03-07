@@ -1,7 +1,6 @@
 import React from 'react';
-// import LandingPage from './components/root/LandingPage'
-import Posts from './components/posts/Posts'
-import PostsInput from './components/posts/PostInput'
+import PostsContainer from './containers/PostsContainer';
+
 import './App.css';
 
 function App() {
@@ -9,10 +8,9 @@ function App() {
     <div className="App">
       <p>Instagram</p>
       {/* < LandingPage /> */}
-      < Posts />
-      < PostsInput />
+      <PostsContainer />
     </div>
   );
 }
 
-export default App;
+export default (App);

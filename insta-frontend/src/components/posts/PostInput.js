@@ -29,6 +29,7 @@ class PostInput extends Component {
       image: null,
       contetn: "",
       user_id: null
+
     })
   }
   render(){
@@ -39,7 +40,7 @@ class PostInput extends Component {
         <label>Location</label>
         <input type="text" onChange={this.handleOnChange} name="location"/>
         <label>Image:</label>
-        <input type="file" onChange={this.handleOnImage} name="image" name="image"/>
+        <input type="file" onChange={this.handleOnImage} name="image"/>
         <label>Content</label>
         <input type="text" onChange={this.handleOnChange} name="content"/>
         {/* <input 
