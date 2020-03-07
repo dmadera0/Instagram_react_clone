@@ -23,7 +23,8 @@ class PostInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    // this.props.addPost
+    const post = this.state
+    this.props.createPost(post)
     this.setState({
       location: "",
       image: null,

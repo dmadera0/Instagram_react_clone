@@ -8,8 +8,8 @@ class PostsContainer extends Component {
     return(
     <div>
       <h1>Posts Cotainer</h1>
-      < Posts /> 
-      < PostInput />
+      < Posts post={this.props.posts} addPosts={this.props.addPosts} editPost={this.props.editPost} deletePost={this.props.deletePost} /> 
+      < PostInput createPost={this.props.createPost}/>
     </div>)
   }
 }
@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
   addPosts: posts => dispatch({type: "ADD_POSTS", posts}),
   createPost: post => dispatch({type: "CREATE_POST", post}),
   editPost: id => dispatch({type: "EDIT_POST"}, id),
-  deletePOst: id => dispatch({type: "DELETE_POST"}, id)
+  deletePost: id => dispatch({type: "DELETE_POST"}, id)
 })
 
 
