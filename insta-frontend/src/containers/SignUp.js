@@ -7,7 +7,8 @@ class SignUp extends Component {
     email: "",  
     phoneNum: null,
     password: "",
-    image: `undefined`,
+    image: null,
+    laoding:false
   }
 
   handleOnChange = (event) => {
@@ -25,14 +26,15 @@ class SignUp extends Component {
     event.preventDefault()
     const user = {...this.state}
     this.props.createUser(user)
-    // console.log(this.state)
-    // debugger
+    console.log(this.state)
+    debugger
     this.setState({
       username: "",
       email: "",  
       phoneNum: null,
       password: "",
-      image: `undefined`
+      image: null,
+      loading: false
     })
   }
 
@@ -59,4 +61,4 @@ class SignUp extends Component {
 }
 
 
-export default connect(null, {createUser})(SignUp)
+export default connect(null, { createUser })(SignUp)

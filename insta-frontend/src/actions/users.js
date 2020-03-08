@@ -11,20 +11,21 @@ export const getUsers = () =>{
 // export const  findUser = () => {dispatch({type: "FIND_USER", id}) }
 
 export const  createUser = ( user ) => {
-  return (dispatch) => {
+  return ( dispatch ) => {
     dispatch({type: "CREATE_USER"}, user)
-    fetch("/users", {
-      method: 'POST',
-      body: JSON.stringify(user),
-      header:{
-        "Content-Type": 'application/json'
-      } 
-    })
-    .then(resp => resp.json())
-    .then(newUser => {
-      debugger;
-      return dispatch({type: 'CREATED_USER', payload: newUser})})
-    }
+    debugger;
+      fetch("/users", {
+        method: 'POST',
+        body: user,
+        header:{
+          "Content-Type": 'multipart/form-data'
+        } 
+      })
+      .then(resp => resp.json())
+      .then(newUser => {
+        debugger;
+        return dispatch({type: 'CREATED_USER', payload: newUser})})
+      }
   }
 
 // export const  editUser = () => {dispatch({type: "EDIT_USER", id})}
