@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SignUp from './SignUp'
+
 class LandingPage extends Component {
   
   state = {
@@ -14,17 +14,13 @@ class LandingPage extends Component {
   }
 
   handleOnSubmit = (event) =>{
-    event.preventDEfault()
+    event.preventDefault()
     // import action
     this.setState({
       number: null,
       password: ""
     })
   }
-
-  // handleOnSingUp = (event) =>{
-  //   console.log(event)
-  // }
 
   render() {
     
@@ -37,8 +33,6 @@ class LandingPage extends Component {
           <input type="password" name="password" onChange={this.handleOnChange}/>
           <input type="submit" />
         </form>
-        <button>sign Up</button>
-        <SignUp />
       </div>
     )
   }

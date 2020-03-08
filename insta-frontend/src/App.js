@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import PostsContainer from './containers/PostsContainer';
-
+import UsersContainer from './containers/UsersContainer';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <p>Instagram</p>
-      {/* < LandingPage /> */}
-      <PostsContainer />
-    </div>
-  );
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+        <h1>Instagram</h1>
+        {/* <PostsContainer /> */}
+        <UsersContainer />
+      </div>
+    );
+  }
 }
-
-export default (App);
+export default App;
