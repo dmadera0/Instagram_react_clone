@@ -7,8 +7,8 @@ class SignUp extends Component {
     email: "",  
     phoneNum: null,
     password: "",
-    image: null,
-    laoding:false
+    image: '',
+    loading: false
   }
 
   handleOnChange = (event) => {
@@ -24,16 +24,22 @@ class SignUp extends Component {
   }
   handleOnSubmit = (event) => {
     event.preventDefault()
-    const user = {...this.state}
+    let user = new FormData();
+    user.append("username", this.state.username)
+    user.append("email", this.state.email)
+    user.append("phoneNum", this.state.phoneNum)
+    user.append("password", this.state.password)
+    user.append("image", this.state.image)
+    // const user = {...this.state}
     this.props.createUser(user)
-    console.log(this.state)
-    debugger
+    console.log(user, this.state)
+    // debugger
     this.setState({
       username: "",
       email: "",  
       phoneNum: null,
       password: "",
-      image: null,
+      image: '',
       loading: false
     })
   }
@@ -50,7 +56,7 @@ class SignUp extends Component {
             <label>Number</label>
             <input type="number"name="phoneNum" onChange={this.handleOnChange} />
             <label>Image</label>
-            <input type="file" onChange={this.handleOnImage} name="image" />
+            <input type="file" onChange={this.handleOnImage} name="image" accept="image/png, image/jpeg"/>
             <label>password</label>
             <input type="password" name="password" onChange={this.handleOnChange} value={this.state.password}/>
             <input type="submit" value="Sign Up"/>
