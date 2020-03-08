@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
-import PostsContainer from './containers/PostsContainer';
+// import PostsContainer from './containers/PostsContainer';
 import UsersContainer from './containers/UsersContainer';
+import SignUp from './containers/SignUp';
 import './App.css';
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
         <h1>Instagram</h1>
         {/* <PostsContainer /> */}
         <UsersContainer />
+        <SignUp />
       </div>
     );
   }

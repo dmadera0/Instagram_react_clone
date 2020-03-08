@@ -26,7 +26,7 @@ class UsersCointainer extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.users.loading, state.users.users)
+  // console.log(state.users.loading, state.users.users)
   return {
     users: state.users.users,
     loading: state.users.loading
