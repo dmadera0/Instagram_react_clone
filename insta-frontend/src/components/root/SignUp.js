@@ -22,7 +22,8 @@ class SignUp extends Component {
   }
   handleOnSubmit = (event) => {
     event.preventDefault()
-    // this.props.addUser(this.State)
+    const newUser = this.state
+    // this.props.createUser(newUser)
     this.setState({
       username: "",
       email: "",  
@@ -53,5 +54,8 @@ class SignUp extends Component {
     )
   }
 }
+
+
+
 
 export default SignUp

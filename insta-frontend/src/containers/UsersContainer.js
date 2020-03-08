@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import { getUsers }  from '../actions/Users'; 
 
 // import LandingPage from '../components/root/LandingPage'
 // import SignUp from '../components/root/SignUp'
@@ -7,13 +8,18 @@ import Users from '../components/users/Users'
 
 
 class UsersCointainer extends Component {
+
+  componentDidMount(){
+    this.props.getUsers()
+  }
+
   render(){
     return(
       <div>
         <h1>Users container</h1>
         {/* <LandingPage findUser={this.props.findUser}/>
         <SignUp createUser={this.props.createUser}/> */}
-        <Users />
+        <Users users={this.props.users} loading={this.props.loading} />
       </div>
     )
   }
@@ -29,4 +35,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps)(UsersCointainer)
+export default connect(mapStateToProps, { getUsers })(UsersCointainer)

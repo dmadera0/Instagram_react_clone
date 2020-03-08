@@ -9,7 +9,7 @@ export default (state = { users:[], loading: false}, action ) => {
     case "USERS_LOADED":
       return {
         users: action.payload,
-        laoding: false
+        loading: false
       }
 
     case "GET_USER":
