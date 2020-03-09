@@ -12,17 +12,16 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Instagram</h1>
-        {/* <PostsContainer /> */}
-        {/* <UsersContainer />
-        <SignUp /> */}
-        <LandingPage />
-
         <Router>
           <div>
             <NavBar />
-            <Route exact path="/" render={() => <div>Home</div>} />
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/signup" render={() => <div>signup</div>} />
           </div>
         </Router>
+        {/* <PostsContainer /> */}
+        {/* <UsersContainer />
+        <SignUp /> */}
       </div>
     );
   }
