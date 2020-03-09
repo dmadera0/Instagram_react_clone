@@ -30,14 +30,13 @@ class SignUp extends Component {
     user.append("phoneNum", this.state.phoneNum)
     user.append("password", this.state.password)
     user.append("image", this.state.image)
-    // const user = {...this.state}
     this.props.createUser(user)
-    console.log(user, this.state)
+    // console.log(user, this.state)
     // debugger
     this.setState({
       username: "",
       email: "",  
-      phoneNum: null,
+      phoneNum: "",
       password: "",
       image: '',
       loading: false
