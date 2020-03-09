@@ -6,7 +6,7 @@ class User extends Component {
       <div>
         {<hr></hr>}
         {this.props.username} {<br/>}{<br/>}
-        {<img src={this.props.image } width="300"/>}
+        {<img src={this.props.image } width="300" alt=""/>}
       </div>
     )
   }

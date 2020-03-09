@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getUser } from '../actions/Users'
+import SessionUser from '../components/users/SessionUser'
 class LandingPage extends Component {
   
   state = {
@@ -25,6 +26,11 @@ class LandingPage extends Component {
       phoneNum: "",
       password: ""
     })
+    return(
+      <div>
+        <SessionUser />
+      </div>
+    )
   }
 
   render() {
