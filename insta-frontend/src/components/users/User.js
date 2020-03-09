@@ -4,8 +4,9 @@ class User extends Component {
   render(){
     return(
       <div>
-        Username: {this.props.username} {<br/>}
-        Profile Pic: {<img src={this.props.image} />}
+        {<hr></hr>}
+        {this.props.username} {<br/>}{<br/>}
+        {<img src={this.props.image } width="300"/>}
       </div>
     )
   }
