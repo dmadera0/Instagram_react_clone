@@ -26,11 +26,6 @@ class LandingPage extends Component {
       phoneNum: "",
       password: ""
     })
-    return(
-      <div>
-        <SessionUser />
-      </div>
-    )
   }
 
   render() {
