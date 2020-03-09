@@ -7,13 +7,28 @@ export const getUsers = () =>{
   }
 }
 
-
-// export const  findUser = () => {dispatch({type: "FIND_USER", id}) }
+export const  getUser = ( user ) => {
+  return (dispatch) => {
+    dispatch({type: "GET_USER"}, user)
+      fetch("/session", {
+        method: 'POST',
+        body: user,
+        header:{
+          "Content-Type": 'multipart/form-data'
+        } 
+      })
+      .then( resp => resp.json())
+      .then( foundUser => {
+        debugger
+        return dispatch({type:'GOT_USER', payload: foundUser})
+      })
+  }
+}
 
 export const  createUser = ( user ) => {
   return ( dispatch ) => {
     dispatch({type: "CREATE_USER"}, user)
-    debugger;
+    // debugger;
       fetch("/users", {
         method: 'POST',
         body: user,
@@ -23,7 +38,7 @@ export const  createUser = ( user ) => {
       })
       .then(resp => resp.json())
       .then(newUser => {
-        debugger;
+        // debugger;
         return dispatch({type: 'CREATED_USER', payload: newUser})})
       }
   }

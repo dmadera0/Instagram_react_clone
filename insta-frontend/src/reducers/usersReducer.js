@@ -27,7 +27,18 @@ export default (state = { users:[], loading: false}, action ) => {
       }
     
     case "GET_USER":
-      return state
+      console.log("getting user")
+      return {
+        ...state,
+        loading: true
+      }
+
+    case "GOT_USER":
+      console.log("got user?!")
+      return{
+        users:[...state.users, action.payload],
+        loading: false
+    }
 
     case "EDIT_USER":
       return state 
