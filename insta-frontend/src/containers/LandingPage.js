@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getUser } from '../actions/Users'
-import SessionUser from '../components/users/SessionUser'
+
 class LandingPage extends Component {
   
   state = {
     username: "",
-    password:""
+    password:"",
+    loading: false
+
   }
 
   handleOnChange = (event) =>{
@@ -24,14 +26,16 @@ class LandingPage extends Component {
     this.props.getUser(user)
     this.setState({
       phoneNum: "",
-      password: ""
+      password: "",
+      loading: false
     })
+    
   }
-
   render() {
     
     return(
       <div>
+        <h1>Instagram</h1>
         <form onSubmit={this.handleOnSubmit}>
           <label>User name</label>
           <input type="text" name="username" onChange={this.handleOnChange}/>
@@ -43,5 +47,8 @@ class LandingPage extends Component {
     )
   }
 }
+// 
+
+
 
 export default connect(null, { getUser })(LandingPage)

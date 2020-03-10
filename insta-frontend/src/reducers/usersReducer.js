@@ -35,10 +35,10 @@ export default (state = { users:[], loading: false}, action ) => {
 
     case "GOT_USER":
       console.log("got user?!")
-      return{
-        users:[...state.users, action.payload],
+      return {
+        users: action.payload,
         loading: false
-    }
+      }
 
     case "EDIT_USER":
       return state 

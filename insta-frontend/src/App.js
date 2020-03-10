@@ -4,21 +4,24 @@ import NavBar from './components/NavBar'
 // import PostsContainer from './containers/PostsContainer';
 // import UsersContainer from './containers/UsersContainer';
 // import SignUp from './containers/SignUp';
+import SessionContainer from './containers/SessionContainer';
 import LandingPage from './containers/LandingPage';
 import './App.css';
 
 class App extends Component {
   render(){
+    
     return (
       <div className="App">
-        <h1>Instagram</h1>
+        
         <Router>
+        <NavBar />
           <div>
-            <NavBar />
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/signup" render={() => <div>signup</div>} />
           </div>
         </Router>
+        < SessionContainer />
         {/* <PostsContainer /> */}
         {/* <UsersContainer />
         <SignUp /> */}
