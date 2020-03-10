@@ -4,9 +4,17 @@ import { getUser } from '../actions/Users'
 import SessionUser from '../components/users/SessionUser'
 class SessionContainer extends Component {
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(nextProps, nextState)
-    return nextProps.loading !== this.props.loading
+  state = {
+    users: []
+  }
+
+  componentDidUpdate(prevProps, PrevState) {
+    if (prevProps.loading !== this.props.loading) {
+      this.setState({
+        users: this.props.users,
+        loading: this.props.loading
+      }, console.log(this.state))
+    }
   }
   render(){
     return(<div>
