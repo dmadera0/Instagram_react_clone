@@ -43,6 +43,39 @@ export const  createUser = ( user ) => {
       }
   }
 
-// export const  editUser = () => {dispatch({type: "EDIT_USER", id})}
+export const  editUser = ( id ) => {
+    return ( dispatch ) => {
+      dispatch({type: "EDIT_USER"}, id)
+      // debugger;
+        fetch(`/users/${id}`, {
+          method: 'PATCH',
+          body: id,
+          header:{
+            "Content-Type": 'multipart/form-data'
+          } 
+        })
+        .then(resp => resp.json())
+        .then( User => {
+          // debugger;
+          return dispatch({type: 'EDITED_USER', payload: User})})
+        }
+}
 
-// export const  deleteUser = () => {dispatch({type: "DELETE_USER", id})}
+
+export const  logOut = ( user ) => {
+  return ( dispatch ) => {
+    dispatch({type: "LOG_OUT"}, user)
+    // debugger;
+      fetch(`/logout`, {
+        method: 'DELETE',
+        body: user,
+        header:{
+          "Content-Type": 'multipart/form-data'
+        } 
+      })
+      .then(resp => resp.json())
+      .then( User => {
+        // debugger;
+        return dispatch({type: 'LOGED_OUT', payload: User})})
+      }
+}

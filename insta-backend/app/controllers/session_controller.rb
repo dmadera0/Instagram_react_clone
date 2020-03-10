@@ -10,6 +10,11 @@ class SessionController < ApplicationController
       end
   end 
 
+  def destroy 
+    session.delete("user_id")
+    session[:user_id] = nil 
+  end 
+
   private 
   def user_params
     params.permit(:username, :password)
