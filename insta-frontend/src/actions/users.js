@@ -7,6 +7,15 @@ export const getUsers = () =>{
   }
 }
 
+export const showUser = (id) =>{
+  return ( dispatch ) => {
+    dispatch({type: 'LOADING_USER'}, id)
+      fetch(`/users/${id}`)
+      .then(resp => resp.json())
+      .then(users =>  dispatch({type: "SHOW_USER", payload: users}) )
+  }
+}
+
 export const  getUser = ( user ) => {
   return (dispatch) => {
     dispatch({type: "GET_USER"}, user)
@@ -44,21 +53,22 @@ export const  createUser = ( user ) => {
   }
 
 export const  editUser = ( id ) => {
-    return ( dispatch ) => {
-      dispatch({type: "EDIT_USER"}, id)
+  return ( dispatch ) => {
+    dispatch({type: "EDIT_USER"}, id)
       // debugger;
-        fetch(`/users/${id}`, {
-          method: 'PATCH',
-          body: id,
-          header:{
-            "Content-Type": 'multipart/form-data'
-          } 
-        })
-        .then(resp => resp.json())
-        .then( User => {
+    fetch(`/users/${id}`, {
+      method: 'PATCH',
+      body: id,
+      header:{
+        "Content-Type": 'multipart/form-data'
+      } 
+    })
+    .then(resp => resp.json())
+    .then( User => {
           // debugger;
-          return dispatch({type: 'EDITED_USER', payload: User})})
-        }
+    return dispatch({type: 'EDITED_USER', payload: User})
+    })
+  }
 }
 
 
