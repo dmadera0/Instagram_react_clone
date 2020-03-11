@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createUser } from '../actions/Users'
+import {Link} from "react-router-dom";
 class SignUp extends Component {
   state = {
     username: "",
@@ -46,20 +47,21 @@ class SignUp extends Component {
   render(){
     return(
       <div>
-        <h1>Sign Up!</h1>
+        <h1>Welcome to Instagram</h1>
         <form onSubmit={this.handleOnSubmit}>
-            <label>User Name</label>
-            <input type="text" name="username" onChange={this.handleOnChange} value={this.state.username}/>
-            <label>Email</label>
-            <input type="text" name="email" onChange={this.handleOnChange} value={this.state.email}/>
-            <label>Number</label>
-            <input type="number"name="phoneNum" onChange={this.handleOnChange} />
-            <label>Image</label>
-            <input type="file" onChange={this.handleOnImage} name="image" accept="image/png, image/jpeg"/>
-            <label>password</label>
-            <input type="password" name="password" onChange={this.handleOnChange} value={this.state.password}/>
+            <label>Username: </label>
+            <input type="text" name="username" onChange={this.handleOnChange} value={this.state.username}/><br></br>
+            <label>Email: </label>
+            <input type="text" name="email" onChange={this.handleOnChange} value={this.state.email}/><br></br>
+            <label>Number: </label>
+            <input type="number"name="phoneNum" onChange={this.handleOnChange} /><br></br>
+            <label>Image: </label>
+            <input type="file" onChange={this.handleOnImage} name="image" accept="image/png, image/jpeg"/><br></br>
+            <label>password: </label>
+            <input type="password" name="password" onChange={this.handleOnChange} value={this.state.password}/><br></br>
             <input type="submit" value="Sign Up"/>
           </form>
+          <Link to="/home" className="btn btn-primary"> Back to Log In</Link>
       </div>
     )
   }
