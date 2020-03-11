@@ -14,7 +14,7 @@ class PostsContainer extends Component {
     <div>
       <h1>Posts Cotainer</h1>
       < PostInput createPost={this.props.createPost}/> 
-      < Posts post={this.props.posts}  /> 
+      < Posts posts={this.props.posts}  /> 
       
     </div>)
   }
