@@ -1,4 +1,4 @@
-export const fetchPosts = () =>{
+export const getPosts = () =>{
   return ( dispatch ) => {
     dispatch({type: 'LOADING_POSTS'})
       fetch('/posts')
