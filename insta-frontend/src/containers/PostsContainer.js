@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Posts from '../components/posts/Posts'
-import PostInput from '../components/posts/PostInput'
 import { getPosts } from '../actions/Posts'
 class PostsContainer extends Component {
 
@@ -13,7 +12,6 @@ class PostsContainer extends Component {
     return(
     <div>
       <h1>Posts Cotainer</h1>
-      < PostInput createPost={this.props.createPost}/> 
       < Posts posts={this.props.posts}  /> 
       
     </div>)

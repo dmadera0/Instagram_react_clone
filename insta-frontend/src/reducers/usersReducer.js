@@ -48,6 +48,7 @@ export default (state = { users:[], loading: false}, action ) => {
     case "GOT_USER":
       console.log("got user?!")
       return {
+        ...state,
         users: action.payload,
         loading: false
       }
@@ -60,6 +61,7 @@ export default (state = { users:[], loading: false}, action ) => {
 
     case "EDITED_USER":
       return {
+        ...state,
         users: action.payload,
         loading: false
       }
@@ -72,6 +74,7 @@ export default (state = { users:[], loading: false}, action ) => {
 
     case "LOGGED_OUT":
       return {
+        ...state,
         users: action.payload,
         loading: false
       }

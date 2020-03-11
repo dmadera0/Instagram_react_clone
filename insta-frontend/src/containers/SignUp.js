@@ -61,7 +61,7 @@ class SignUp extends Component {
             <input type="password" name="password" onChange={this.handleOnChange} value={this.state.password}/><br></br>
             <input type="submit" value="Sign Up"/>
           </form>
-          <Link to="/home" className="btn btn-primary"> Back to Log In</Link>
+          <Link to="/" className="btn btn-primary"> Back to Log In</Link>
       </div>
     )
   }
