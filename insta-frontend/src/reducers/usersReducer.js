@@ -41,10 +41,28 @@ export default (state = { users:[], loading: false}, action ) => {
       }
 
     case "EDIT_USER":
-      return state 
+      return {
+        ...state,
+        loading: true
+      }
 
-    case "DELETE_USER":
-      return state
+    case "EDITED_USER":
+      return {
+        users: action.payload,
+        loading: false
+      }
+
+    case "LOG_OUT":
+      return {
+        ...state,
+        loading: true
+      }
+
+    case "LOGGED_OUT":
+      return {
+        users: action.payload,
+        loading: false
+      }
 
     default: 
     return state

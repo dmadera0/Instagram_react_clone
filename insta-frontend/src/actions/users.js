@@ -76,6 +76,6 @@ export const  logOut = ( user ) => {
       .then(resp => resp.json())
       .then( User => {
         // debugger;
-        return dispatch({type: 'LOGED_OUT', payload: User})})
+        return dispatch({type: 'LOGGED_OUT', payload: User})})
       }
 }
