@@ -9,10 +9,10 @@ export const getUsers = () =>{
 
 export const showUser = (id) =>{
   return ( dispatch ) => {
-    dispatch({type: 'LOADING_USER'}, id)
+    dispatch({type: 'SHOW_USER'}, id)
       fetch(`/users/${id}`)
       .then(resp => resp.json())
-      .then(users =>  dispatch({type: "SHOW_USER", payload: users}) )
+      .then(users =>  dispatch({type: "SHOWING_USER", payload: users}) )
   }
 }
 

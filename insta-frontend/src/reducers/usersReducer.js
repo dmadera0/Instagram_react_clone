@@ -12,6 +12,18 @@ export default (state = { users:[], loading: false}, action ) => {
         loading: false
       }
 
+    case "SHOW_USER":
+      return {
+        ...state,
+        loading: true
+      }
+
+    case "SHOWING_USER":
+      return {
+        users: action.payload,
+        loading: false
+      }
+
     case "CREATE_USER":
       console.log("creating user")
       return{
