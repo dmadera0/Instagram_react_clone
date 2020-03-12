@@ -2,10 +2,8 @@ import React, {Component} from 'react'
 import User from './User'
 import { connect } from 'react-redux'
 import { getUser } from '../../actions/users'
-import NavBar from '../../components/NavBar'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-// import NavBar from './components/NavBar'
 class SessionUser extends Component {
 
   render(){
@@ -16,13 +14,6 @@ class SessionUser extends Component {
     return(
       <div> 
       
-        <Router>
-          <div>
-            <NavBar />
-          </div>
-        </Router>
-
-
         <p>Session user</p>
         <Link to={{
               pathname: "/posts/new",

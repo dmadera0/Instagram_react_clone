@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 const link = {
   width: '100px',
@@ -15,7 +16,7 @@ const NavBar = () => {
 
 
     <div className="navbar">
-      <NavLink to='/' style={link}
+      <NavLink to='/home' style={link}
       activeStyle={{
         background: 'white',
         color: 'black'
@@ -48,7 +49,14 @@ const NavBar = () => {
       }}
     >Logout</NavLink> | 
 
+
+
+      
+
     </div>
+
+
+
 
   ) 
 }
