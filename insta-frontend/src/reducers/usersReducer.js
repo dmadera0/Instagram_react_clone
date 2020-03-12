@@ -44,15 +44,17 @@ export default (state = { users:[], loading: false}, action ) => {
         ...state,
         loading: true
       }
+      
 
     case "GOT_USER":
       console.log("got user?!")
+      debugger
       return {
         ...state,
         users: action.payload,
         loading: false
       }
-
+    
     case "EDIT_USER":
       return {
         ...state,

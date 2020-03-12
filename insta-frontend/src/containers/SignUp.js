@@ -19,8 +19,8 @@ function SignUp(props) {
     user.append("password", password)
     user.append("image", image)
     props.createUser(user)
-    console.log(user)
-    debugger
+    // console.log(user)
+    // debugger
     history.push("/signup/successful");
   }
 

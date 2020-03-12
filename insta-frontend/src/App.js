@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import PostsContainer from './containers/PostsContainer';
 import UsersContainer from './containers/UsersContainer';
 import SignUpSuccessful from "./containers/SignUpSuccessful"
-import SessionContainer from './containers/SessionContainer';
 import LandingPage from './containers/LandingPage';
 import SignUp from './containers/SignUp';
 import SessionUser from './components/users/SessionUser';
