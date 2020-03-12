@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 class PostInput extends Component {
-
-  state = {
-    location: "",
-    image: null,
-    contetn: "",
-    user_id: null
+  constructor(props){
+    super(props)
+    this.state = {
+      location: "",
+      image: null,
+      contetn: "",
+      user_id: null
+    }
   }
 
   handleOnChange = (event) => {
@@ -34,6 +36,8 @@ class PostInput extends Component {
     })
   }
   render(){
+    console.log(this.props)
+    debugger;
     return(
     <div>
       <h>Create Post</h>
@@ -44,12 +48,12 @@ class PostInput extends Component {
         <input type="file" onChange={this.handleOnImage} name="image"/><br></br>
         <label>Content</label>
         <input type="text" onChange={this.handleOnChange} name="content"/><br></br>
-        {/* <input 
+        <input 
             type="hidden" 
             value={user_id}
             name="user_id"
-            ref={x => {setValue(user_id)}}
-          /> */}
+            ref={x => {setValue(this.props.location.state.thisUser.id)}}
+          />
           <input type="submit"/>
       </form>
     </div>)
