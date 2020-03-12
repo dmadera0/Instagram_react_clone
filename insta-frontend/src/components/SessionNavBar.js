@@ -20,8 +20,14 @@ const NavBar = () => {
       activeStyle={{
         background: 'white',
         color: 'black'
-      }}>Home</NavLink> |
+      }}>Home</NavLink> | 
 
+
+      <NavLink to='/posts/new' style={link}
+      activeStyle={{
+        background: 'white',
+        color: 'black'
+      }}>Create Post</NavLink> |
 
       <NavLink to='/user/edit' exact
       style={link}

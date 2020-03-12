@@ -8,18 +8,15 @@ class SessionUser extends Component {
 
   render(){
     console.log(this.props.users)
-    const thisUser = (this.props.users)
+    const thisUser = (this.props.user)
     const image = <img src={thisUser.image} width="200" alt="" />;
-    const username = <p>{thisUser.username}</p>   
+    const username = <h2>{thisUser.username}</h2>
     return(
       <div> 
-      
-        <p>Session user</p>
-        <Link to={{
-              pathname: "/posts/new",
-              state: {thisUser}
-                  }}>New Post</Link>{<br></br>}
-        {this.props.laoding ? <h3>...loading...</h3> : username, image}      
+        {username}
+        {image}{<br></br>}
+        <Link to="/posts/new">New Post</Link>{<br></br>}
+        
       </div>
     )
   }
@@ -28,7 +25,7 @@ class SessionUser extends Component {
 const mapStateToProps = state => {
   // console.log(state.users.loading, state.users.users)
   return {
-    users: state.users.users,
+    user: state.users.users,
     loading: state.users.loading
   }
 }

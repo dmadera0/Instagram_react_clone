@@ -17,7 +17,7 @@ function PostInput(props) {
     post.append("location", location)
     post.append("image", image)
     post.append( "content", content)
-    post.append("user_id", props.location.state.thisUser.id)
+    post.append("user_id", props.user.id)
     props.createPost(post)
     history.push("/home")
   }
@@ -37,5 +37,11 @@ function PostInput(props) {
     </div>)
 }
 
+const mapStateToProps = state => {
+  // console.log(state.users.loading, state.users.users)
+  return {
+    user: state.users.users
+  }
+}
 
-export default connect(null, { createPost })(PostInput);
+export default connect(mapStateToProps, { createPost })(PostInput);
