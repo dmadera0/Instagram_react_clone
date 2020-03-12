@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { getUser } from '../actions/Users'
-import {BrowserRouter as Router, Redirect, Link, useHistory} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 function LandingPage(props) {
 
   let history = useHistory();
@@ -16,7 +16,7 @@ function LandingPage(props) {
     let user = new FormData();
     user.append("username", username)
     user.append("password", password)
-    getUser(user)
+    props.getUser(user)
     history.push("/home");
   }
 

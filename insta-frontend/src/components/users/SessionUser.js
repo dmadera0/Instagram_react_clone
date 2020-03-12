@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import User from './User'
+// import NavBar from './components/NavBar'
 class SessionUser extends Component {
   render(){
     // console.log(this.props)
