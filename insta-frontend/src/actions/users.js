@@ -37,7 +37,7 @@ export const  getUser = ( user ) => {
 export const  createUser = ( user ) => {
   return ( dispatch ) => {
     dispatch({type: "CREATE_USER"}, user)
-    debugger;
+    // debugger;
       fetch("/users", {
         method: 'POST',
         body: user,
@@ -47,7 +47,7 @@ export const  createUser = ( user ) => {
       })
       .then(resp => resp.json())
       .then(newUser => {
-        debugger;
+        // debugger;
         return dispatch({type: 'CREATED_USER', payload: newUser})})
       }
   }

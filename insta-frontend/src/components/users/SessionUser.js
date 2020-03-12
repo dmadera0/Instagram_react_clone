@@ -16,9 +16,9 @@ class SessionUser extends Component {
         {<br></br>}
         {profilePic}{<br></br>}
         {username}{<br></br>}
+        {<hr></hr>}
         {this.props.loading ? <h3>loading</h3> : 
         <MyPost posts={posts}/> }
-        {/* <MyPost /> */}
       </div>
     )
   }

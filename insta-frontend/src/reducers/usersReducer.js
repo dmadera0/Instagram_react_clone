@@ -48,7 +48,7 @@ export default (state = { users:[], currentUser: "", loading: false}, action ) =
 
     case "GOT_USER":
       console.log("got user?!")
-      debugger
+      // debugger
       return {
         ...state,
         currentUser: action.payload,

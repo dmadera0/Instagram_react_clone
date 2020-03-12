@@ -2,11 +2,11 @@ import React, {Component} from 'react'
 
 class MyPosts extends Component {
   render(){
+  const Myposts = this.props.posts.map( (post, i) => <li key={i} id={post.id} user_id={post.user_id}><img src={post.image} width="400" alt=""/></li>)
+  
     return(
       <div>
-      {/* {this.props.location}{<br></br>}
-      {this.props.content}{<br></br>}
-      {<img src={this.props.image } width="300" alt=""/>} */}
+      {Myposts}
       <p>My Posts</p>
       
     </div>)
