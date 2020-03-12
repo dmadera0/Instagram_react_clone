@@ -16,8 +16,6 @@ class UsersCointainer extends Component {
     return(
       <div>
         <h1>Users container</h1>
-        {/* <LandingPage findUser={this.props.getUser}/>
-        <SignUp createUser={this.props.createUser}/> */}
         <Users users={this.props.users} loading={this.props.loading} />
       </div>
     )

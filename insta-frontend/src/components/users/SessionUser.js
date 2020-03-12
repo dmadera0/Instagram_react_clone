@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import User from './User'
 import { connect } from 'react-redux'
 import { getUser } from '../../actions/users'
-import { Link } from 'react-router-dom'
+import NavBar from '../../components/NavBar'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 // import NavBar from './components/NavBar'
 class SessionUser extends Component {
@@ -13,7 +14,15 @@ class SessionUser extends Component {
     const image = <img src={thisUser.image} width="200" alt="" />;
     const username = <p>{thisUser.username}</p>   
     return(
-      <div>
+      <div> 
+      
+        <Router>
+          <div>
+            <NavBar />
+          </div>
+        </Router>
+
+
         <p>Session user</p>
         <Link to={{
               pathname: "/posts/new",
