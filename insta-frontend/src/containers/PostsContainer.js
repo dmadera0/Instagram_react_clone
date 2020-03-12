@@ -11,7 +11,7 @@ class PostsContainer extends Component {
   render(){
     return(
     <div>
-      <h1>Posts Cotainer</h1>
+      
       < Posts posts={this.props.posts}  /> 
       
     </div>)

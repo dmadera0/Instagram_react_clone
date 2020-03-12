@@ -7,7 +7,7 @@ class Post extends Component {
       {this.props.location}{<br></br>}
       {this.props.content}{<br></br>}
       {<img src={this.props.image } width="300" alt=""/>}
-
+      {<hr></hr>}
     </div>)
   }
 }

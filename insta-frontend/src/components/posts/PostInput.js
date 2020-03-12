@@ -40,7 +40,7 @@ function PostInput(props) {
 const mapStateToProps = state => {
   // console.log(state.users.loading, state.users.users)
   return {
-    user: state.users.users
+    user: state.users.currentUser
   }
 }
 

@@ -1,31 +1,34 @@
 import React, {Component} from 'react'
-import User from './User'
 import { connect } from 'react-redux'
 import { getUser } from '../../actions/users'
 import { Link } from 'react-router-dom'
+import MyPost from '../posts/MyPosts'
 
 class SessionUser extends Component {
 
   render(){
-    console.log(this.props.users)
-    const thisUser = (this.props.user)
-    const image = <img src={thisUser.image} width="200" alt="" />;
-    const username = <h2>{thisUser.username}</h2>
+    console.log(this.props.user)
+
+    const {username, image, posts} = this.props.user
+    const profilePic = <img src={image} width="300" alt=""/> 
     return(
-      <div> 
-        {username}
-        {image}{<br></br>}
-        <Link to="/posts/new">New Post</Link>{<br></br>}
-        
+      <div className="SessionUser"> 
+        {<br></br>}
+        {profilePic}{<br></br>}
+        {username}{<br></br>}
+        {this.props.loading ? <h3>loading</h3> : 
+        <MyPost posts={posts}/> }
+        {/* <MyPost /> */}
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  // console.log(state.users.loading, state.users.users)
+  // console.log(state.users.loading, state.users.currentUser)
+  
   return {
-    user: state.users.users,
+    user: state.users.currentUser,
     loading: state.users.loading
   }
 }

@@ -37,8 +37,5 @@ function LandingPage(props) {
   )
 }
 
-// 
-
-
 
 export default connect(null, { getUser })(LandingPage)

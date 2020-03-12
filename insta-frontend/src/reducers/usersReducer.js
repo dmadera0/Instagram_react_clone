@@ -1,4 +1,4 @@
-export default (state = { users:[], loading: false}, action ) => {
+export default (state = { users:[], currentUser: "", loading: false}, action ) => {
   switch(action.type){
     case "LOADING_USERS":
       return {
@@ -48,10 +48,10 @@ export default (state = { users:[], loading: false}, action ) => {
 
     case "GOT_USER":
       console.log("got user?!")
-      // debugger
+      debugger
       return {
         ...state,
-        users: action.payload,
+        currentUser: action.payload,
         loading: false
       }
     
