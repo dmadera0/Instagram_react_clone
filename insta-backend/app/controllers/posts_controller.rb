@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   # POST /posts
   def create
+    binding.pry
     @post = Post.new(post_params)
 
     if @post.save
@@ -46,6 +47,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:content, :location, :user_id, :image)
+      params.permit(:content, :location, :user_id, :image)
     end
 end

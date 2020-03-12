@@ -1,63 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux'
+import {Link, useHistory} from "react-router-dom";
+import { createPost } from '../../actions/Posts'
 
-class PostInput extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      location: "",
-      image: null,
-      contetn: "",
-      user_id: null
-    }
-  }
+function PostInput(props) {
+  let history = useHistory();  
+  const [location, setLocation] = useState("");
+  const [ image, setImage] = useState("");
+  const [ content, setContent] = useState("");
+  // const [user_id, setUser_id] = useState("");
 
-  handleOnChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
 
-  handleOnImage = (event) => {
-    this.setState({
-      image: event.target.files[0]
-    })
-  }
-
-  handleOnSubmit = (event) => {
+  function handleOnSubmit(event) {
     event.preventDefault();
-    const post = this.state
-    this.props.createPost(post)
-    this.setState({
-      location: "",
-      image: null,
-      contetn: "",
-      user_id: null
-
-    })
+    let post = new FormData();
+    post.append("location", location)
+    post.append("image", image)
+    post.append( "content", content)
+    post.append("user_id", props.location.state.thisUser.id)
+    props.createPost(post)
+    history.push("/home")
   }
-  render(){
-    console.log(this.props)
-    debugger;
-    return(
+
+  return(
     <div>
-      <h>Create Post</h>
-      <form onSubmit={this.handleOnSubmit}>
+      <h1>Create Post</h1>
+      <form onSubmit={handleOnSubmit}>
         <label>Location</label>
-        <input type="text" onChange={this.handleOnChange} name="location"/><br></br>
+        <input type="text" onChange={e => setLocation(e.target.value)} name="location"/><br></br>
         <label>Image:</label>
-        <input type="file" onChange={this.handleOnImage} name="image"/><br></br>
+        <input type="file" onChange={e => setImage(e.target.files[0])}     name="image" accept="image/png, image/jpeg"/><br></br>
         <label>Content</label>
-        <input type="text" onChange={this.handleOnChange} name="content"/><br></br>
-        <input 
-            type="hidden" 
-            value={user_id}
-            name="user_id"
-            ref={x => {setValue(this.props.location.state.thisUser.id)}}
-          />
+        <input type="text" onChange={e => setContent(e.target.value)} name="content"/><br></br>
           <input type="submit"/>
       </form>
     </div>)
-  }
 }
 
-export default PostInput;
+
+export default connect(null, { createPost })(PostInput);
