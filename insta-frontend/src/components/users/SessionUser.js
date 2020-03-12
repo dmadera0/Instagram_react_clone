@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import User from './User'
 import { connect } from 'react-redux'
-import { getUser } from '../../actions/Users'
+import { getUser } from '../../actions/users'
 import { Link } from 'react-router-dom'
 
 // import NavBar from './components/NavBar'

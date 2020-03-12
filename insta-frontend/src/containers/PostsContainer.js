@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Posts from '../components/posts/Posts'
-import { getPosts } from '../actions/Posts'
+import { getPosts } from '../actions/posts'
 class PostsContainer extends Component {
 
   componentDidMount(){

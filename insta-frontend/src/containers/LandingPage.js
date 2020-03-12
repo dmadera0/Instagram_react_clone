@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import { getUser } from '../actions/Users'
+import { getUser } from '../actions/users'
 import {Link, useHistory} from "react-router-dom";
 function LandingPage(props) {
 

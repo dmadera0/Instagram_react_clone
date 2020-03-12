@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { getUsers }  from '../actions/Users'; 
+import { getUsers }  from '../actions/users'; 
 // import LandingPage from '../components/root/LandingPage'
 // import SignUp from '../components/root/SignUp'
 import Users from '../components/users/Users'

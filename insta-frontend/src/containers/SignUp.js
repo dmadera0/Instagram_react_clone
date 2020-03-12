@@ -1,6 +1,6 @@
 import React, {  useState } from 'react'
 import { connect } from 'react-redux'
-import { createUser } from '../actions/Users'
+import { createUser } from '../actions/users'
 import {Link, useHistory} from "react-router-dom";
 function SignUp(props) {
   let history = useHistory();
