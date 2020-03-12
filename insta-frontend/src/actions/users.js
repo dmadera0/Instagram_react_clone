@@ -28,7 +28,7 @@ export const  getUser = ( user ) => {
       })
       .then( resp => resp.json())
       .then( foundUser => {
-        debugger
+        // debugger
         return dispatch({type:'GOT_USER', payload: foundUser})
       })
   }
