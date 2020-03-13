@@ -25,6 +25,9 @@ function SignUp(props) {
     history.push("/signup/successful");
   }
 
+  function logInForm() {
+    history.push("/")
+  }
 
   return(
       <div>
@@ -42,7 +45,7 @@ function SignUp(props) {
             <input type="password" name="password" onChange={e => setPassword(e.target.value)} /><br></br>
             <input type="submit" value="Sign Up"/>
           </form>
-          <Link to="/" className="btn btn-primary"> Back to Log In</Link>
+          <button onClick={logInForm}>Or Log In</button>
       </div>
     )
 }
