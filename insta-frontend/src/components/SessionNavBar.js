@@ -15,7 +15,9 @@ const NavBar = (props) => {
 
     
 
-    <div className="navbar" style={{display: props.location.pathname === "/" ? "none" : null}}>
+    <div className="navbar" style={{display: props.location.pathname === "/" || "/singup" ? "none" : null}}   >
+
+    
 
       <NavLink to='/home' style={link}
       activeStyle={{

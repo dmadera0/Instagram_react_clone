@@ -20,6 +20,10 @@ function LandingPage(props) {
     history.push("/home");
   }
 
+  function signUpForm() {
+    history.push("/signup")
+  }
+
   return(
       <div>
           <h1>Welcome to Instagram</h1>
@@ -31,7 +35,7 @@ function LandingPage(props) {
             <input type="password" name="password" onChange={e => setPassword(e.target.value)}/><br></br>
             <input type="submit" value="Log In" className="btn btn-primary" />
           </form>
-          <Link to="/signup" className="btn btn-primary">Sign up</Link>
+          <button onClick={signUpForm}>Sign Up</button>
       </div>
   )
 }
