@@ -27,6 +27,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
+    binding.pry
     if @post.update(post_params)
       render json: @post
     else

@@ -52,13 +52,13 @@ export const  createUser = ( user ) => {
       }
   }
 
-export const  editUser = ( id ) => {
+export const  editUser = (id, user ) => {
   return ( dispatch ) => {
-    dispatch({type: "EDIT_USER"}, id)
-      // debugger;
+    dispatch({type: "EDIT_USER"}, id, user)
+       debugger;
     fetch(`/users/${id}`, {
       method: 'PATCH',
-      body: id,
+      body: user,
       header:{
         "Content-Type": 'multipart/form-data'
       } 

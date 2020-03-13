@@ -29,7 +29,7 @@ const NavBar = () => {
         color: 'black'
       }}>Create Post</NavLink> |
 
-      <NavLink to='/user/edit' exact
+      <NavLink to='/users/edit' exact
       style={link}
       activeStyle={{
         background: 'white',

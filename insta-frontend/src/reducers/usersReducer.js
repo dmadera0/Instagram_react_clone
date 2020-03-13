@@ -64,7 +64,7 @@ export default (state = { users:[], currentUser: "", loading: false}, action ) =
     case "EDITED_USER":
       return {
         ...state,
-        users: action.payload,
+        currentUser: action.payload,
         loading: false
       }
 
