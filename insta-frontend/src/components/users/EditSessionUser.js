@@ -1,7 +1,7 @@
 import React, {  useState } from 'react'
 import { connect } from 'react-redux'
 import { editUser } from '../../actions/users'
-import {Link, useHistory} from "react-router-dom";
+import { useHistory} from "react-router-dom";
 
 function EditSessionUser(props){
   let history = useHistory();
@@ -11,7 +11,7 @@ function EditSessionUser(props){
   const [PhoneNum, setPhoneNum] = useState("");
   const [Image, setImage] = useState("");
 
-  const {username, email, phoneNum, image, id} = props.user
+  const {username, email, phoneNum, id} = props.user
 
   // debugger
   function handleOnSubmit(event) {

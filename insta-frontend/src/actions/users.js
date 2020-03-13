@@ -76,16 +76,20 @@ export const  logOut = ( user ) => {
   return ( dispatch ) => {
     dispatch({type: "LOG_OUT"}, user)
     // debugger;
-      fetch(`/logout`, {
+      fetch(`/logout`
+      , {
         method: 'DELETE',
         body: user,
         header:{
           "Content-Type": 'multipart/form-data'
         } 
-      })
-      .then(resp => resp.json())
-      .then( User => {
-        // debugger;
-        return dispatch({type: 'LOGGED_OUT', payload: User})})
       }
+      )
+      .then(dispatch({type: "LOGGED_OUT", payload: user})
+    )
+  }
 }
+
+
+
+  // then(dispatch({type: 'LOGGED_OUT'}))  

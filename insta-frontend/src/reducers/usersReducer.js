@@ -75,9 +75,11 @@ export default (state = { users:[], currentUser: "", loading: false}, action ) =
       }
 
     case "LOGGED_OUT":
+      console.log("logged out?")
       return {
         ...state,
-        users: action.payload,
+        users: [],
+        currentUser: "",
         loading: false
       }
 

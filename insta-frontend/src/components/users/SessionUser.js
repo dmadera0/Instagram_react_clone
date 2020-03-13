@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { getUser } from '../../actions/users'
-import { Link } from 'react-router-dom'
 import MyPost from '../posts/MyPosts'
 
 class SessionUser extends Component {
