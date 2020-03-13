@@ -20,7 +20,6 @@ function LandingPage(props) {
     history.push("/session");
   }
 
-    
   return(
       <div>
           <h1>Welcome to Instagram</h1>
@@ -36,6 +35,5 @@ function LandingPage(props) {
       </div>
   )
 }
-
 
 export default connect(null, { getUser })(LandingPage)

@@ -4,7 +4,6 @@ class ApplicationController < ActionController::API
  
   include ActionController::Cookies
   helper_method :current_user
-
   before_action :authenticated
 
   def authenticated

@@ -6,13 +6,13 @@ class SessionController < ApplicationController
     
       if @user && @user.authenticate(params[:password])  
         session[:user_id] = @user.id
-        binding.pry
+        # binding.pry
         render json: @user
       end
   end 
 
   def destroy 
-    binding.pry
+    # binding.pry
     session.delete("user_id")
     session[:user_id] = nil 
   end 

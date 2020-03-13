@@ -10,7 +10,10 @@ import LogOutSession from './LogOutSession';
 function Session() {
   return(
     <div>
-      <Router>
+      
+      {/* <NavBar /> */}
+
+      {/* </div><Router>
           <div>
             <NavBar />
             <Route exact path="/explore" component={PostsContainer} />
@@ -18,10 +21,12 @@ function Session() {
             <Route exact path="/posts/new" component={PostInput} />
             <Route exact path="/users/edit" component={EditSessionUser} />
             <Route exact path="/logout" component={LogOutSession} />
-            <Redirect to="/home" />
-          </div>
-        </Router>
 
+           
+          </div>
+        </Router> */}
+
+        <Redirect to="/home" />
     </div>
   )
 }

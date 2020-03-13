@@ -89,7 +89,3 @@ export const  logOut = ( user ) => {
     )
   }
 }
-
-
-
-  // then(dispatch({type: 'LOGGED_OUT'}))  
