@@ -4,7 +4,6 @@ import NavBar from './components/SessionNavBar'
 import SignUpSuccessful from "./containers/SignUpSuccessful"
 import LandingPage from './containers/LandingPage';
 import SignUp from './containers/SignUp';
-import Session from './components/users/Session';
 
 import PostsContainer from './containers/PostsContainer';
 import PostInput from './components/posts/PostInput'
@@ -21,14 +20,11 @@ class App extends Component {
       <div className="App">
         
         <Router>
-        {/* <NavBar /> */}
           <div>
           <Route path="/" render={props => <NavBar {...props} />} />
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/signup/successful" component={SignUpSuccessful}/>
-            <Route exact path="/session" component={Session} />
-
             <Route exact path="/explore" component={PostsContainer} />
             <Route exact path="/home" component={SessionUser} />
             <Route exact path="/posts/new" component={PostInput} />
