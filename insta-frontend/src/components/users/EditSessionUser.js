@@ -17,7 +17,6 @@ function EditSessionUser(props){
   function handleOnSubmit(event) {
     event.preventDefault()
     let user = new FormData();
-    user.append("id", id)
     user.append("username", UserName)
     user.append("email", Email)
     user.append("phoneNum", PhoneNum)
@@ -33,16 +32,16 @@ function EditSessionUser(props){
     <div>
       <br></br>
       <br></br>
-      <li>Must Include Password</li>
+      <li>All Field Required</li>
       <form onSubmit={handleOnSubmit}>
             <label>Username: </label>
-            <input type="text" name="username" onChange={e => setUsername(e.target.value)} placeholder={username}/><br></br>
+            <input type="text" name="username" onChange={e => setUsername(e.target.value)}  placeholder={username}/><br></br>
             <label>Email: </label>
             <input type="text" name="email" onChange={e => setEmail(e.target.value)} placeholder={email}/><br></br>
             <label>Number: </label>
             <input type="number"name="phoneNum" onChange={e => setPhoneNum(e.target.value)} placeholder={phoneNum}/><br></br>
             <label>Image: </label>
-            <input type="file" onChange={e => setImage(e.target.files[0])} name="image" accept="image/png, image/jpeg" placeholder={image}/><br></br>
+            <input type="file" onChange={e => setImage(e.target.files[0])} name="image" accept="image/png, image/jpeg" /><br></br>
             <label>password: </label>
             <input type="password" name="password" onChange={e => setPassword(e.target.value)} /><br></br>
             <input type="submit" value="Ready!"/>
