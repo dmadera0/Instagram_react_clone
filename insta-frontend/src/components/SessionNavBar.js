@@ -11,13 +11,12 @@ const link = {
 }
 
 const NavBar = (props) => {
+  
+
   return(
-
-    
-
-    <div className="navbar" style={{display: props.location.pathname === "/" || "/singup" ? "none" : null}}   >
-
-    
+    console.log(props.location.pathname),
+    <div className="navbar" 
+     >
 
       <NavLink to='/home' style={link}
       activeStyle={{
@@ -57,16 +56,7 @@ const NavBar = (props) => {
         color: 'black'
       }}
     >Logout</NavLink> | 
-
-
-
-      
-
     </div>
-
-
-
-
   ) 
 }
 export default NavBar;

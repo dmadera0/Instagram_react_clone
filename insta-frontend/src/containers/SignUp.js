@@ -1,7 +1,7 @@
 import React, {  useState } from 'react'
 import { connect } from 'react-redux'
 import { createUser } from '../actions/users'
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 function SignUp(props) {
   
   let history = useHistory();
@@ -13,6 +13,10 @@ function SignUp(props) {
 
   function handleOnSubmit(event) {
     event.preventDefault()
+
+    if (!username || !email  || !password || !phoneNum || !image) {
+      history.push("/signup")
+    } else {
     let user = new FormData();
     user.append("username", username)
     user.append("email", email)
@@ -23,6 +27,7 @@ function SignUp(props) {
     // console.log(user)
     // debugger
     history.push("/signup/successful");
+    }
   }
 
   function logInForm() {
