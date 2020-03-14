@@ -8,7 +8,8 @@ class SessionController < ApplicationController
         session[:user_id] = @user.id
         # binding.pry
         render json: @user
-      end
+      else 
+        render json: @puser.errors, status: :unprocessable_entity
   end 
 
   def destroy 
