@@ -1,7 +1,7 @@
 import React, {  useState } from 'react'
 import { connect } from 'react-redux'
 import { editUser } from '../../actions/users'
-import { useHistory} from "react-router-dom";
+import { useHistory, Link} from "react-router-dom";
 
 function EditSessionUser(props){
   let history = useHistory();
@@ -28,6 +28,10 @@ function EditSessionUser(props){
     history.push("/home");
   }
 
+  if(!props.user){
+    return (<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
+  }
+  else {
   return(
     <div>
       <br></br>
@@ -47,7 +51,7 @@ function EditSessionUser(props){
             <input type="submit" value="Ready!"/>
           </form>
     </div>
-  )
+  )}
 }
 
 const mapStateToProps = state => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logOut } from "../../actions/users"
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 
 function LogOutSession(props) {
@@ -13,7 +13,10 @@ function LogOutSession(props) {
     history.push('/')
   }
   
-
+  if(!props.user){
+    return (<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
+  }
+  else {
   return(
   <div>
     {<br></br>}
@@ -21,7 +24,7 @@ function LogOutSession(props) {
     {<br></br>}
     <button onClick={logOut}>Log Out?</button>
   </div>
-  )
+  )}
 }
 
 const mapStateToProps = state => {

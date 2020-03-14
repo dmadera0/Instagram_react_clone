@@ -12,15 +12,16 @@ class PostsContainer extends Component {
     return(
     <div>
       
-      < Posts posts={this.props.posts}  /> 
+      < Posts posts={this.props.posts}  user={this.props.user}/> 
       
     </div>)
   }
 }
 
 const mapStateToProps = state => {
-  console.log(state.posts)
+  console.log(state.posts, state.users.currentUser)
   return{
+    user: state.users.currentUser,
     posts: state.posts.posts,
     laoding: state.posts.loading}
   

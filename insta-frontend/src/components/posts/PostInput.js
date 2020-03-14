@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import { useHistory} from "react-router-dom";
+import { useHistory, Link} from "react-router-dom";
 import { createPost } from '../../actions/posts'
 
 function PostInput(props) {
@@ -8,9 +8,7 @@ function PostInput(props) {
   const [location, setLocation] = useState("");
   const [ image, setImage] = useState("");
   const [ content, setContent] = useState("");
-  // const [user_id, setUser_id] = useState("");
-
-
+  
   function handleOnSubmit(event) {
     event.preventDefault();
     let post = new FormData();
@@ -21,7 +19,10 @@ function PostInput(props) {
     props.createPost(post)
     history.push("/home")
   }
-
+  if(!props.user){
+    return (<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
+  }
+  else {
   return(
     <div>
       <h1>Create Post</h1>
@@ -35,6 +36,7 @@ function PostInput(props) {
           <input type="submit"/>
       </form>
     </div>)
+  }
 }
 
 const mapStateToProps = state => {
