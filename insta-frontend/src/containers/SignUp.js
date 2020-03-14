@@ -37,6 +37,7 @@ function SignUp(props) {
   return(
       <div>
         <h1>Welcome to Instagram</h1>
+        <h3>All fields required</h3>
         <form onSubmit={handleOnSubmit}>
             <label>Username: </label>
             <input type="text" name="username" onChange={e => setUsername(e.target.value)}/><br></br>

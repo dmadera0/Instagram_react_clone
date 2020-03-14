@@ -22,7 +22,7 @@ class App extends Component {
   }
   render(){
     console.log(this.props.user.error)
-    if (this.props.user.error) {
+    if (this.props.user.error || undefined) {
       return (
         <div className="App">
           
