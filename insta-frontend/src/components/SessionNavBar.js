@@ -20,13 +20,13 @@ const NavBar = (props) => {
       activeStyle={{
         background: 'white',
         color: 'black'
-      }}>Home</NavLink> | 
+      }}><span role="img">👤</span></NavLink> | 
 
       <NavLink to='/posts/new' style={link}
       activeStyle={{
         background: 'white',
         color: 'black'
-      }}>Create Post</NavLink> |
+      }}><span role="img">⊕</span></NavLink> |
 
       <NavLink to='/users/edit' exact
       style={link}
@@ -37,13 +37,13 @@ const NavBar = (props) => {
     >Edit Profile</NavLink> | 
 
 
-      <NavLink to='/explore'exact
+      <NavLink to='/feed'exact
       style={link}
       activeStyle={{
         background: 'white',
         color: 'black'
       }}
-    >Explore</NavLink> | 
+    ><span role="img">☖</span></NavLink> | 
 
 
       <NavLink to='/logout'exact

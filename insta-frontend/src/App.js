@@ -16,10 +16,7 @@ import PostsContainer from './containers/PostsContainer';
 import './App.css';
 
 class App extends Component {
-  constructor(props){
-    super(props)
-
-  }
+  
   render(){
     console.log(this.props.user.error)
     if (this.props.user.error || undefined) {
@@ -44,7 +41,7 @@ class App extends Component {
               
               <Router >   
                 <Route path="/home" render={props => <NavBar {...props} />} />
-                <Route path="/explore" render={props => <NavBar {...props} />} />
+                <Route path="/feed" render={props => <NavBar {...props} />} />
                 <Route path="/posts/new" render={props => <NavBar {...props} />} />
                 <Route path="/users/edit" render={props => <NavBar {...props} />} />
                 <Route path="/logout" render={props => <NavBar {...props} />} />
@@ -52,7 +49,7 @@ class App extends Component {
                   <Route exact path="/" component={LandingPage} />
                   <Route exact path="/signup" component={SignUp} />
                   <Route exact path="/signup/successful" component={SignUpSuccessful}/>
-                  <Route exact path="/explore" component={PostsContainer}  />}/>
+                  <Route exact path="/feed" component={PostsContainer}  />}/>
                   <Route exact path="/home" component={SessionUser} />
                   <Route exact path="/posts/new" component={PostInput} />
                   <Route exact path="/users/edit" component={EditSessionUser} />

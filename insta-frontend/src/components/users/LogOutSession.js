@@ -16,12 +16,13 @@ function LogOutSession(props) {
     return (<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
   }
   else {
+    document.title = "Log Out?"
   return(
   <div>
     {<br></br>}
     {<br></br>}
     {<br></br>}
-    <button onClick={logOut}>Log Out?</button>
+    <button onClick={logOut}>Log Out</button>
   </div>
   )}
 }

@@ -32,6 +32,7 @@ function EditSessionUser(props){
     return (<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
   }
   else {
+    document.title = "Edit " + username 
   return(
     <div>
       <br></br>

@@ -26,7 +26,7 @@ function LandingPage(props) {
   function signUpForm() {
     history.push("/signup")
   }
-
+  document.title = "Welcome"
   return(
       <div>
           <h1>Welcome to Instagram</h1>

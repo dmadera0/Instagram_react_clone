@@ -34,6 +34,7 @@ function SignUp(props) {
     history.push("/")
   }
 
+  document.title = "Sign Up"
   return(
       <div>
         <h1>Welcome to Instagram</h1>

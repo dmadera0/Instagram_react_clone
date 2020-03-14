@@ -7,12 +7,14 @@ class SessionUser extends Component {
 
   render(){
       console.log(this.props.user)
-  
+    
     if (!this.props.user  || this.props.user === undefined){
       return(<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
       } else if (this.props.user) {
+        
         const {username, image, posts} = this.props.user
         const profilePic = <img src={image} width="300" alt=""/> 
+        document.title = username
         return(
         <div className="SessionUser"> 
           {<br></br>}

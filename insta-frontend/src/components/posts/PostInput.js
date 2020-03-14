@@ -23,6 +23,7 @@ function PostInput(props) {
     return (<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
   }
   else {
+    document.title = "New Post"
   return(
     <div>
       <h1>Create Post</h1>
