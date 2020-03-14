@@ -10,6 +10,7 @@ class SessionController < ApplicationController
         render json: @user
       else 
         render json: @puser.errors, status: :unprocessable_entity
+      end
   end 
 
   def destroy 
