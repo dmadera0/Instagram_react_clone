@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { connect } from 'react-redux'
 const link = {
   width: '100px',
   padding: '12px',
@@ -11,6 +11,7 @@ const link = {
 }
 
 const NavBar = (props) => {
+  
   return(
     console.log(props.location.pathname),
     <div className="navbar" >
@@ -20,7 +21,6 @@ const NavBar = (props) => {
         background: 'white',
         color: 'black'
       }}>Home</NavLink> | 
-
 
       <NavLink to='/posts/new' style={link}
       activeStyle={{
@@ -56,4 +56,11 @@ const NavBar = (props) => {
     </div>
   ) 
 }
-export default NavBar;
+
+const mapStateToProps = state => {
+  // console.log(state.users.loading, state.users.users)
+  return {
+    user: state.users.currentUser
+  }
+}
+export default connect(mapStateToProps)(NavBar);

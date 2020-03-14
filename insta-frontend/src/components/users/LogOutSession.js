@@ -5,8 +5,7 @@ import { useHistory, Link } from 'react-router-dom'
 
 
 function LogOutSession(props) {
-  const { id } = props.user
-  console.log(id)
+  console.log(props)
   let history = useHistory();
   function logOut() {
     props.logOut(props.user)
