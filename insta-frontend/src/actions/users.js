@@ -1,3 +1,7 @@
+import {useHistory} from "react-router-dom";
+import { Redirect } from 'react-router-dom';
+import React from 'react'
+
 export const getUsers = () =>{
   return ( dispatch ) => {
     dispatch({type: 'LOADING_USERS'})
@@ -26,11 +30,17 @@ export const  getUser = ( user ) => {
           "Content-Type": 'multipart/form-data'
         } 
       })
-      .then( resp => resp.json())
+      .then( resp => resp.json() )
       .then( foundUser => {
         // debugger
         return dispatch({type:'GOT_USER', payload: foundUser})
       })
+      .catch(function() {
+        var myRequest = new Request('/');
+        var myCred = myRequest.url;
+        return myCred 
+        
+    });
   }
 }
 

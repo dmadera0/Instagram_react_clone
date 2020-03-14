@@ -11,12 +11,9 @@ const link = {
 }
 
 const NavBar = (props) => {
-  
-
   return(
     console.log(props.location.pathname),
-    <div className="navbar" 
-     >
+    <div className="navbar" >
 
       <NavLink to='/home' style={link}
       activeStyle={{
