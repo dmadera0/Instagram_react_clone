@@ -16,17 +16,25 @@ const NavBar = (props) => {
     console.log(props.location.pathname),
     <div className="navbar" >
 
-      <NavLink to='/home' style={link}
+    <NavLink to='/feed'exact
+      style={link}
       activeStyle={{
         background: 'white',
         color: 'black'
-      }}><span role="img">👤</span></NavLink> | 
+      }}
+    ><span role="img">☖</span></NavLink> | 
 
       <NavLink to='/posts/new' style={link}
       activeStyle={{
         background: 'white',
         color: 'black'
       }}><span role="img">⊕</span></NavLink> |
+
+      <NavLink to='/home' style={link}
+      activeStyle={{
+        background: 'white',
+        color: 'black'
+      }}><span role="img">👤</span></NavLink> | 
 
       <NavLink to='/users/edit' exact
       style={link}
@@ -35,16 +43,6 @@ const NavBar = (props) => {
         color: 'black'
       }}
     >Edit Profile</NavLink> | 
-
-
-      <NavLink to='/feed'exact
-      style={link}
-      activeStyle={{
-        background: 'white',
-        color: 'black'
-      }}
-    ><span role="img">☖</span></NavLink> | 
-
 
       <NavLink to='/logout'exact
       style={link}
