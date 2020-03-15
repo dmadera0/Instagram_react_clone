@@ -12,7 +12,7 @@ class SessionUser extends Component {
       return(<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
       } else if (this.props.user) {
         
-        const {username, image, posts} = this.props.user
+        const {username, image, posts, id} = this.props.user
         const profilePic = <img src={image} width="300" alt=""/> 
         document.title = username
         return(
@@ -22,7 +22,7 @@ class SessionUser extends Component {
           {username}{<br></br>}
           {<hr></hr>}
           {this.props.loading ? <h3>loading</h3> : 
-          <MyPost posts={posts}/> }
+          <MyPost posts={posts} user_id={id}/> }
         </div>)
     }
   }
