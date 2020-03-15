@@ -1,18 +1,19 @@
-import React, {Component} from 'react'
-
-class Post extends Component {
-  render(){
-      // console.log(this.props.state)
-      // ♥
-    return(<div>
+import React, { useState} from 'react'
+import { useHistory, Link} from "react-router-dom";
+function Post(props) {
+  const [ like, setLike] = useState('♡')
+  let history = useHistory()
+  
+  return(
+    <div>
       {<br></br>}
-      {this.props.content}{<br></br>}
-      {<img src={this.props.image } width="400" alt=""/>}{<br></br>}
-      <button>♡ ❤️️ </button><button>💬</button>
+      {props.content}{<br></br>}
+      {<img src={props.image } width="400" alt="" onDoubleClick={ e => setLike('❤️')}/>}{<br></br>}
+      <button onClick={ e => setLike('❤️')}>{like} </button> <button onClick={ e => history.push(`users/${props.user_id}/posts/${props.id}/comments`)}>💬</button>
       {<br></br>}
       {<br></br>}
     </div>)
-  }
+
 }
 
 export default Post
