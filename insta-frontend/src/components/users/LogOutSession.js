@@ -16,7 +16,7 @@ function LogOutSession(props) {
     return (<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
   }
   else {
-    document.title = "Log Out?"
+    document.title = "Log out?"
   return(
   <div>
     {<br></br>}

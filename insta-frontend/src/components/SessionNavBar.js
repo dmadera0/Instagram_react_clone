@@ -42,7 +42,7 @@ const NavBar = (props) => {
         background: 'white',
         color: 'black'
       }}
-    >Edit Profile</NavLink> | 
+    >✐</NavLink> | 
 
       <NavLink to='/logout'exact
       style={link}
@@ -50,7 +50,7 @@ const NavBar = (props) => {
         background: 'white',
         color: 'black'
       }}
-    >Logout</NavLink> | 
+    >◉</NavLink> | 
     </div>
   ) 
 }
