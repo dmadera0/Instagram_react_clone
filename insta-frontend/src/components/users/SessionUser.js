@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class SessionUser extends Component {
 
   render(){
-      console.log(this.props.user)
+      // console.log(this.props.user)
     
     if (!this.props.user  || this.props.user === undefined){
       return(<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)

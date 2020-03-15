@@ -10,12 +10,13 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+    # binding.pry
     render json: @post
   end
 
   # POST /posts
   def create
-    binding.pry
+    # binding.pry
     @post = Post.new(post_params)
 
     if @post.save

@@ -3,7 +3,7 @@ import Post from './Post'
 import { Link } from 'react-router-dom'
 class Posts extends Component {
   render(){
-    console.log(this.props)
+    // console.log(this.props)
     if(!this.props.user){
       return (<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
     }

@@ -19,7 +19,7 @@ class PostsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.posts, state.users.currentUser)
+  // console.log(state.posts, state.users.currentUser)
   return{
     user: state.users.currentUser,
     posts: state.posts.posts,

@@ -11,12 +11,13 @@ export const getPosts = () =>{
 
 export const showPost = (id) =>{
   return ( dispatch ) => {
-    dispatch({type: 'SHOW_POSTs'}, id)
+    dispatch({type: 'SHOW_POST'}, id)
       fetch(`/posts/${id}`)
       .then(resp => resp.json())
       .then(Post => {
         dispatch({type: "SHOWING_POST", payload: Post})
       })
+      // debugger
   }
 }
 
