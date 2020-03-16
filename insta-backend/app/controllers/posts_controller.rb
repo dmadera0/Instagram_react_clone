@@ -7,9 +7,9 @@ class PostsController < ApplicationController
 
     render json: @posts.order(created_at: :desc)
 
-    if current_user 
-      render json: current_user.posts.order(created_at: :desc)
-    end
+    # if current_user 
+    #   render json: current_user.posts.order(created_at: :desc)
+    # end
   end
 
   # GET /posts/1

@@ -3,13 +3,13 @@ import Post from './Post'
 import { Link } from 'react-router-dom'
 class Posts extends Component {
   render(){
-    // console.log(this.props)
+    console.log(this.props)
     if(!this.props.user){
       return (<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found!, <Link to="/">Log In</Link></div>)
     }
     else {
       
-      const allPosts = this.props.posts.map( (post, i)  => <Post key={i} id={post.id} user_id={post.user.id} location={post.location} content={post.content} image={post.image} user={post.user}/>, console.log(this.props.posts) )
+      const allPosts = this.props.posts.map( (post, i)  => <Post key={i} id={post.id} user_id={post.user.id} location={post.location} content={post.content} image={post.image} user={post.user}/> )
       document.title = "Feed"
       
     return(
