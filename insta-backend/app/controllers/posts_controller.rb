@@ -5,7 +5,11 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts
+    render json: @posts.order(created_at: :desc)
+
+    if current_user 
+      render json: current_user.posts.order(created_at: :desc)
+    end
   end
 
   # GET /posts/1

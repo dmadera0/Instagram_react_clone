@@ -3,12 +3,9 @@ import MyPost from './MyPost'
 import { Link } from "react-router-dom";
 class MyPosts extends Component {
   render(){
-  
+    console.log(this.props)
     if(this.props.posts) {
-      // const Myposts = this.props.posts.map( (post, i) => <ul key={i} id={post.id} user_id={post.user_id}> <img src={post.image} width="400" alt="" /> {<br></br>}<button value="like">♥️️</button>  </ul>)
-
       const Myposts = this.props.posts.map( (post, i) => <MyPost key={i} id={post.id} user_id={this.props.user_id} location={post.location} content={post.content} image={post.image} user={post.user} /> )
-
       return(
       <div>
         {Myposts}
