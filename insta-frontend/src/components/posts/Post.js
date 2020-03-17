@@ -8,7 +8,7 @@ function Post(props) {
   let history = useHistory()
   function handleOnComments() {
     props.showPost(props.id)
-    history.push(`users/${props.user_id}/posts/${props.id}/comments`)
+    history.push(`users/${props.user_id}/posts/${props.id}`)
   }
   return(
     <div>
