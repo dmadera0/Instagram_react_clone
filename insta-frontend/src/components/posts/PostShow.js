@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
-
+import Comments from './Comments'
 class PostShow extends Component {
   constructor(props){
     super(props)
@@ -55,7 +55,7 @@ class PostShow extends Component {
           <button type="submit" value="Comment"  >Comment</button>
         </form>{<br></br>}
         
-        {this.props.loading ? "Loading" : "comments"}
+        {this.props.loading ? "Loading" : < Comments comments={this.props.post.comments}/>}
         
       </div>
       )
