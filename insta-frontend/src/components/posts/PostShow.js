@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
 import Comments from './Comments'
 class PostShow extends Component {
-  constructor(props){
-    super(props)
-  }
+ 
 
   state = {
     content: "",

@@ -9,7 +9,7 @@ function MyPost(props) {
 
   function handleOnComments() {
     props.showPost(props.id)
-    history.push(`users/${props.user_id}/posts/${props.id}`)
+    
   }
 
   function handleOnDelete() {
@@ -27,7 +27,7 @@ function MyPost(props) {
       {props.content}{<br></br>}
       {<img src={props.image } width="400" alt="" onDoubleClick={ e => setLike('❤️')}/>}{<br></br>}
       <button onClick={ e => setLike('❤️')}>{like} </button> 
-      <button onClick={handleOnComments}>💬</button>
+      <Link  to={`users/${props.user_id}/posts/${props.id}`} onClick={handleOnComments}>💬</Link>
       <button onClick={handleOnEdit}>✎</button>
       <button onClick={handleOnDelete}>✐</button>
       {<br></br>}
