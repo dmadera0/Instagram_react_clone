@@ -22,7 +22,7 @@ class SessionUser extends Component {
           {username}{<br></br>}
           {<hr></hr>}
           {this.props.loading ? <h3>loading</h3> : 
-          <MyPost posts={posts} user_id={id}/> }
+          <MyPost posts={posts} user={this.props.user} user_id={id}/> }
         </div>)
     }
   }

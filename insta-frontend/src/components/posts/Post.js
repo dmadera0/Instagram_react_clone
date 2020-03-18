@@ -14,8 +14,8 @@ function Post(props) {
       {<br></br>}
       {props.content}{<br></br>}
       {<img src={props.image } width="400" alt="" onDoubleClick={ e => setLike('❤️')}/>}{<br></br>}
-      <button onClick={ e => setLike('❤️')}>{like} </button> 
-      <Link  to={`users/${props.user_id}/posts/${props.id}`} onClick={handleOnComments}>💬</Link>
+      <Link onClick={ e => setLike('❤️')}>{like} </Link> 
+      <Link  to={`/${props.user.username}/posts/${props.id}`} onClick={handleOnComments}>💬</Link>
       {<br></br>}
       {<br></br>}
     </div>)
