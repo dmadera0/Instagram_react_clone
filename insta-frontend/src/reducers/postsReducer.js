@@ -18,7 +18,6 @@ export default (state = { posts:[], currentPost: '', loading: false}, action ) =
       }
 
     case "SHOWING_POST":
-      debugger;
       return {
         ...state,
         currentPost: action.payload,
