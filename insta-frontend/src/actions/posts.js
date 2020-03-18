@@ -66,9 +66,7 @@ export const deletePost = (id) => {
         "Content-Type": 'multipart/form-data'
       }
     })
-    .then( resp => resp.json())
-    .then( Post => {
-      return dispatch({type: "DELETE_POST", payload: Post})
-    }
-  )}
+    .then( dispatch({type: "DELETED_POST"}))
+    
+  }
 }

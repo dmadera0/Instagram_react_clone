@@ -56,7 +56,8 @@ export default (state = { posts:[], currentPost: '', loading: false}, action ) =
 
     case "DELETED_POST":
       return {
-        posts: action.payload,
+        ...state,
+        CurrentPost: "",
         loading: false
       }
 

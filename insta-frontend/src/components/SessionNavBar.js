@@ -42,7 +42,7 @@ const NavBar = (props) => {
         background: 'white',
         color: 'black'
       }}
-    >✐</NavLink> | 
+    >✎</NavLink> | 
 
       <NavLink to='/logout'exact
       style={link}
