@@ -14,7 +14,7 @@ function MyPost(props) {
 
   function handleOnDelete() {
     props.deletePost(props.id)
-    history.push(`/home`)
+    
   }
 
   function handleOnEdit() {

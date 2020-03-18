@@ -27,8 +27,12 @@ class PostShow extends Component {
         header: {
           "Content-Type": 'multipart/form-data'
         }
-      })    
-    }
+    })
+    this.setState({
+      content: ""
+    })
+
+  }
 
   handleOnChange = (event) => {
     this.setState({
@@ -51,7 +55,7 @@ class PostShow extends Component {
         {this.props.loading ? "Loading" : this.props.post.content}{<br></br>}
         <form onSubmit={this.handleOnSubmit }>
           <label>Comment:</label>
-          <input type="tex" onChange={this.handleOnChange} />{<br></br>}
+          <input type="tex" onChange={this.handleOnChange} value={this.state.content}/>{<br></br>}
           <button type="submit" value="Comment"  >Comment</button>
         </form>{<br></br>}
         
