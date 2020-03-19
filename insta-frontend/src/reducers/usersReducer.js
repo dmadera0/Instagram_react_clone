@@ -56,12 +56,14 @@ export default (state = { users:[], currentUser: "", loading: false}, action ) =
       }
     
     case "EDIT_USER":
+      console.log("editing")
       return {
         ...state,
         loading: true
       }
 
     case "EDITED_USER":
+      console.log("edited")
       return {
         ...state,
         currentUser: action.payload,

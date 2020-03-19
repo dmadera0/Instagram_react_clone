@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import MyPost from './MyPost'
 import { Link } from "react-router-dom";
+// import { connect } from  
 class MyPosts extends Component {
   render(){
     // console.log(this.props.posts.sort( (a,b) => (a.id) > (b.id) ? 1 : -1))

@@ -58,9 +58,9 @@ class App extends Component {
                   <Route exact path="/posts/new" component={PostInput} />
                   <Route exact path="/users/edit" component={EditSessionUser} />
                   <Route exact path="/logout" component={LogOutSession} />
-                  <Route path={`/:usersname/posts/:postsId/edit`} render={ props => <EditPost {...props}   /> } />
-                  <Route path={`/:usersname/posts/:postsId/me`} render={ props => <PostShowMe {...props}   /> } />
-                  <Route path={`/:usersname/posts/:postsId`} render={ props => <PostShow {...props}   /> } />
+                  <Route path={`/:usersname/posts/:postsId/edit`} component={ EditPost } />
+                  <Route path={`/:usersname/posts/:postsId/me`} component={PostShowMe} />
+                  <Route path={`/:usersname/posts/:postsId`} component={ PostShow } />
                   
                 </Switch>
               </Router>

@@ -12,13 +12,13 @@ function EditPost(props) {
   console.log(props.post)
   function handleOnSubmit(event) {
     event.preventDefault();
-    // let post = new FormData();
-    // post.append("location", location)
-    // post.append("image", image)
-    // post.append( "content", content)
-    // post.append("user_id", props.user.id)
-    // props.editPost(post)
-    // history.push("/home")
+    let Post = new FormData();
+    Post.append("location", LOCATION)
+    Post.append("image", props.post.image)
+    Post.append( "content", CONTENT)
+    Post.append("user_id", props.user.id)
+    props.editPost(props.post.id, Post)
+    history.push("/home")
   }
 
 

@@ -11,16 +11,6 @@ class PostShowMe extends Component {
     post_id: ""
   }
 
-  handleOnComments = () => {
-    // props.showPost(props.id)
-    
-  }
-
-  handleOnDelete = () => {
-    // props.deletePost(props.id)
-    
-  }
-
   handleOnSubmit = (event) => {
     event.preventDefault()
      
@@ -48,7 +38,6 @@ class PostShowMe extends Component {
       user_id: this.props.user.id,
       post_id: this.props.post.id
     }, console.log(this.state.content)) 
-    
   }
 
   render(){
@@ -59,8 +48,7 @@ class PostShowMe extends Component {
       console.log(this.props, this.props.user, this.props.post)
       return(<div>
         {<br></br>}
-        {this.props.loading ? "Loading" : <Link to={`/${this.props.user.username}/posts/${this.props.post.id}/edit`} onClick={this.handleOnEdit}>✎</Link>}
-        {this.props.loading ? "Loading" : <Link to="/home" onClick={this.handleOnDelete}>✐</Link>}{<br></br>} 
+        
         {this.props.loading ? "Loading" : this.props.post.location}{<br></br>}
         {this.props.loading ? "Loading" : <img src={this.props.post.image} width="600" alt=""/>}{<br></br>}
         {this.props.loading ? "Loading" : this.props.post.content}{<br></br>}
@@ -83,6 +71,7 @@ const mapStateToProps = state => {
   return {
     user: state.users.currentUser,
     post: state.posts.currentPost,
+    posts: state.posts.posts,
     // comment: state.posts.currentPost.comments,
     loading: state.posts.loading
   }
