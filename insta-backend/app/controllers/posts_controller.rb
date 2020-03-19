@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1
   def destroy
-    binding.pry
+    # binding.pry
     @post.destroy
   end
 

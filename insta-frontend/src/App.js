@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import NavBar from './components/SessionNavBar'
 import PostInput from './components/posts/PostInput'
 import PostShow from './components/posts/PostShow'
-import PostShowMe from './components/posts/PostShowMe'
+// import PostShowMe from './components/posts/PostShowMe'
 import EditPost from './components/posts/EditPost'
 import SessionUser from './components/users/SessionUser';
 import EditSessionUser from './components/users/EditSessionUser';
@@ -59,7 +59,7 @@ class App extends Component {
                   <Route exact path="/users/edit" component={EditSessionUser} />
                   <Route exact path="/logout" component={LogOutSession} />
                   <Route path={`/:usersname/posts/:postsId/edit`} component={ EditPost } />
-                  <Route path={`/:usersname/posts/:postsId/me`} component={PostShowMe} />
+                  {/* <Route path={`/:usersname/posts/:postsId/me`} component={PostShowMe} /> */}
                   <Route path={`/:usersname/posts/:postsId`} component={ PostShow } />
                   
                 </Switch>

@@ -55,7 +55,7 @@ export default (state = { posts:[], currentPost: '', loading: false}, action ) =
       }
 
     case "DELETED_POST":
-      debugger;
+      // debugger;
       return {
         ...state,
         posts: [state.posts.filter(p => p.id !== action.payload)],
