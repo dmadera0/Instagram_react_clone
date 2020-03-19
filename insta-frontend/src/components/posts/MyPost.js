@@ -12,14 +12,6 @@ function MyPost(props) {
     
   }
 
-  function handleOnDelete() {
-    props.deletePost(props.id)
-    
-  }
-
-  function handleOnEdit() {
-
-  }
   console.log(props)
   return(
     <div>
@@ -27,9 +19,7 @@ function MyPost(props) {
       {props.content}{<br></br>}
       {<img src={props.image } width="400" alt="" onDoubleClick={ e => setLike('❤️')}/>}{<br></br>}
       <Link onClick={ e => setLike('❤️')}>{like} </Link> 
-      <Link  to={`/${props.user.username}/posts/${props.id}`} onClick={handleOnComments}>💬</Link>
-      <Link onClick={handleOnEdit}>✎</Link>
-      <Link onClick={handleOnDelete}>✐</Link>
+      <Link  to={`/${props.user.username}/posts/${props.id}/me`} onClick={handleOnComments}>💬</Link>
       {<br></br>}
       {<br></br>}
     </div>)

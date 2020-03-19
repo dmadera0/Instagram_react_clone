@@ -33,7 +33,7 @@ export const createPost = ( post) => {
     })
     .then( resp => resp.json())
     .then(newPost => {
-      debugger
+      // debugger
       return dispatch({type: "CREATED_POST", payload: newPost})
     })
   }

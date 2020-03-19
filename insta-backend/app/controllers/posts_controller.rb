@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   # POST /posts
   def create
-    binding.pry
+    # binding.pry
     @post = Post.new(post_params)
 
     if @post.save

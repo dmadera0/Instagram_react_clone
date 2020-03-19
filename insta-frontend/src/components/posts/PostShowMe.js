@@ -1,0 +1,91 @@
+import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import { Link } from "react-router-dom";
+import Comments from './Comments'
+class PostShowMe extends Component {
+ 
+
+  state = {
+    content: "",
+    user_id: "",
+    post_id: ""
+  }
+
+  handleOnComments = () => {
+    // props.showPost(props.id)
+    
+  }
+
+  handleOnDelete = () => {
+    // props.deletePost(props.id)
+    
+  }
+
+  handleOnSubmit = (event) => {
+    event.preventDefault()
+     
+      let comment = new FormData();
+      comment.append("content", this.state.content)
+      comment.append("user_id", this.state.user_id)
+      comment.append("post_id", this.state.post_id)
+    console.log(comment)
+    fetch("/comments", {
+        method: 'POST',
+        body: comment,
+        header: {
+          "Content-Type": 'multipart/form-data'
+        }
+    })
+    this.setState({
+      content: ""
+    })
+
+  }
+
+  handleOnChange = (event) => {
+    this.setState({
+      content: event.target.value,
+      user_id: this.props.user.id,
+      post_id: this.props.post.id
+    }, console.log(this.state.content)) 
+    
+  }
+
+  render(){
+    if(!this.props.user ||  undefined){
+      return(<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found! <Link to="/">Log In</Link></div>)
+    } else {
+      document.title = "Show post"
+      console.log(this.props, this.props.user, this.props.post)
+      return(<div>
+        {<br></br>}
+        {this.props.loading ? "Loading" : <Link to={`/${this.props.user.username}/posts/${this.props.post.id}/edit`} onClick={this.handleOnEdit}>✎</Link>}
+        {this.props.loading ? "Loading" : <Link to="/home" onClick={this.handleOnDelete}>✐</Link>}{<br></br>} 
+        {this.props.loading ? "Loading" : this.props.post.location}{<br></br>}
+        {this.props.loading ? "Loading" : <img src={this.props.post.image} width="600" alt=""/>}{<br></br>}
+        {this.props.loading ? "Loading" : this.props.post.content}{<br></br>}
+        <form onSubmit={this.handleOnSubmit }>
+          <label>Comment:</label>
+          <input type="tex" onChange={this.handleOnChange} value={this.state.content}/>{<br></br>}
+          <button type="submit" value="Comment"  >Comment</button>
+        </form>{<br></br>}
+        
+        {this.props.loading ? "Loading" : < Comments comments={this.props.post.comments}/>}
+        
+      </div>
+      )
+    }
+  }
+}
+
+const mapStateToProps = state => {
+   console.log(state.users.loading, state.posts.currentPost)
+  return {
+    user: state.users.currentUser,
+    post: state.posts.currentPost,
+    // comment: state.posts.currentPost.comments,
+    loading: state.posts.loading
+  }
+}
+
+export default connect(mapStateToProps)(PostShowMe) 

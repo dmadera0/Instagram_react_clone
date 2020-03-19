@@ -1,9 +1,12 @@
 import React, { Component }  from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import { connect } from 'react-redux'
+
 import NavBar from './components/SessionNavBar'
 import PostInput from './components/posts/PostInput'
 import PostShow from './components/posts/PostShow'
+import PostShowMe from './components/posts/PostShowMe'
+import EditPost from './components/posts/EditPost'
 import SessionUser from './components/users/SessionUser';
 import EditSessionUser from './components/users/EditSessionUser';
 import LogOutSession from './components/users/LogOutSession';
@@ -55,7 +58,10 @@ class App extends Component {
                   <Route exact path="/posts/new" component={PostInput} />
                   <Route exact path="/users/edit" component={EditSessionUser} />
                   <Route exact path="/logout" component={LogOutSession} />
+                  <Route path={`/:usersname/posts/:postsId/edit`} render={ props => <EditPost {...props}   /> } />
+                  <Route path={`/:usersname/posts/:postsId/me`} render={ props => <PostShowMe {...props}   /> } />
                   <Route path={`/:usersname/posts/:postsId`} render={ props => <PostShow {...props}   /> } />
+                  
                 </Switch>
               </Router>
             </div>)
