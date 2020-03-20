@@ -23,7 +23,7 @@ class App extends Component {
   
   render(){
     // console.log(this.props.user.error)
-    if (this.props.user.error || undefined) {
+    if (this.props.user.error || undefined ) {
       return (
         <div className="App">
           
@@ -53,20 +53,19 @@ class App extends Component {
                   <Route exact path="/" component={LandingPage} />
                   <Route exact path="/signup" component={SignUp} />
                   <Route exact path="/signup/successful" component={SignUpSuccessful}/>
-                  <Route exact path="/feed" component={PostsContainer}  />}/>
+                  <Route exact path="/feed" component={PostsContainer}  />
                   <Route exact path="/home" component={SessionUser} />
                   <Route exact path="/posts/new" component={PostInput} />
                   <Route exact path="/users/edit" component={EditSessionUser} />
                   <Route exact path="/logout" component={LogOutSession} />
-                  <Route path={`/:usersname/posts/:postsId/edit`} component={ EditPost } />
-                  {/* <Route path={`/:usersname/posts/:postsId/me`} component={PostShowMe} /> */}
-                  <Route path={`/:usersname/posts/:postsId`} component={ PostShow } />
                   
+                  {/* <Route path={`/:usersname/posts/:postsId/me`} component={PostShowMe} /> */}
+                  <Route exact path={`/:usersname/posts/:postsId`} component={ PostShow } />
+                  <Route exact path={`/posts/:postsId/edit`} component={ EditPost } />
+                 
                 </Switch>
               </Router>
             </div>)
-
-
         }
       }
     }

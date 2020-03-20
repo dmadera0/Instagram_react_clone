@@ -32,7 +32,8 @@ export default (state = { posts:[], currentPost: '', loading: false}, action ) =
 
     case "CREATED_POST":
       return {
-        posts: [...state.posts, action.payload], 
+        ...state,
+        posts: [state.posts.concat(action.payload)], 
         loading: false
       }
 
@@ -44,13 +45,15 @@ export default (state = { posts:[], currentPost: '', loading: false}, action ) =
 
     case "EDITED_POST":
       return {
-        posts: action.payload,
+        ...state,
+        currentPost: action.payload,
         loading: false
       }
 
     case "DELETE_POST":
       return {
         ...state,
+        currentPost: action.payload,
         loading: true
       }
 
@@ -59,7 +62,6 @@ export default (state = { posts:[], currentPost: '', loading: false}, action ) =
       return {
         ...state,
         posts: [state.posts.filter(p => p.id !== action.payload)],
-        CurrentPost: "",
         loading: false
       }
 

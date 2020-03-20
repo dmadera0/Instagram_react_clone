@@ -18,8 +18,8 @@ class SessionUser extends Component {
         return(
         <div className="SessionUser"> 
           {<br></br>}
-          {profilePic}{<br></br>}
-          {username}{<br></br>}
+          {this.props.loading ? <h3>loading</h3> :profilePic}{<br></br>}
+          {this.props.loading ? <h3>loading</h3> : username}{<br></br>}
           {<hr></hr>}
           {this.props.loading ? <h3>loading</h3> : 
           <MyPost posts={posts} user={this.props.user} user_id={id}/> }

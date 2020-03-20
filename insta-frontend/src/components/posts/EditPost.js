@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { useHistory, Link} from "react-router-dom";
-import { editPost } from '../../actions/posts'
+import { toEdit } from '../../actions/posts'
 
 function EditPost(props) {
   // let { location, Image, Content } = props.post 
@@ -17,7 +17,7 @@ function EditPost(props) {
     Post.append("image", props.post.image)
     Post.append( "content", CONTENT)
     Post.append("user_id", props.user.id)
-    props.editPost(props.post.id, Post)
+    props.toEdit(props.post.id, Post)
     history.push("/home")
   }
 
@@ -50,9 +50,9 @@ const mapStateToProps = state => {
  return {
    user: state.users.currentUser,
    post: state.posts.currentPost,
-   // comment: state.posts.currentPost.comments,
+   
    loading: state.posts.loading
  }
 }
 
-export default connect(mapStateToProps, { editPost })(EditPost);
+export default connect(mapStateToProps, { toEdit })(EditPost);

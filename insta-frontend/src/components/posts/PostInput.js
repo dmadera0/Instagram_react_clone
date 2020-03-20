@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { useHistory, Link} from "react-router-dom";
 import { createPost } from '../../actions/posts'
+import { showUser } from '../../actions/users'
 
 function PostInput(props) {
   let history = useHistory();  
@@ -47,4 +48,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { createPost })(PostInput);
+export default connect(mapStateToProps, { createPost, showUser })(PostInput);

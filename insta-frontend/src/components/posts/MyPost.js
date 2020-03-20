@@ -15,12 +15,12 @@ function MyPost(props) {
   function handleOnDelete() {
     // debugger
     props.deletePost(props.id)
-    history.push('/home')
+    history.push('/feed')
   }
 
   function handleOnEdit() {
     props.showPost(props.id)
-    history.push(`/${props.user.username}/posts/${props.id}/edit`)
+    history.push(`/posts/${props.id}/edit`)
   }
 
   console.log(props)
@@ -29,7 +29,7 @@ function MyPost(props) {
       {<br></br>}
       {props.content}{<br></br>}
       {<img src={props.image } width="400" alt="" onDoubleClick={ e => setLike('❤️')}/>}{<br></br>}
-      <Link onClick={ e => setLike('❤️')}>{like} </Link> 
+      <button onClick={ e => setLike('❤️')}>{like} </button> 
       <Link  to={`/${props.user.username}/posts/${props.id}`} onClick={handleOnComments}>💬</Link>
       {props.loading ? "Loading" : <button onClick={handleOnEdit} >✎</button>}
       {props.loading ? "Loading" : <button onClick={handleOnDelete}>✐</button>}{<br></br>} 
@@ -37,6 +37,7 @@ function MyPost(props) {
       {<br></br>}
     </div>)
 }
+
 
 
 export default connect(null, {showPost, deletePost})(MyPost)
