@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { getUser } from '../actions/users'
-import { myPosts } from '../actions/posts'
+
 import {useHistory} from "react-router-dom";
 function LandingPage(props) {
 
@@ -21,7 +21,7 @@ function LandingPage(props) {
     user.append("password", password)
     props.getUser(user)
     history.push("/feed");
-    // props.myPosts()
+    
     }
   }
 
@@ -45,4 +45,4 @@ function LandingPage(props) {
   )
 }
 
-export default connect(null, { getUser, myPosts })(LandingPage)
+export default connect(null, { getUser })(LandingPage)

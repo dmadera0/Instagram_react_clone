@@ -11,19 +11,7 @@ export default (state = { posts:[], myPosts:[], currentPost: '', loading: false}
         posts: action.payload,
         loading: false
       }
-
-    case "MYPOSTS_LOADING":
-      return {
-        ...state,
-        loading: true
-      }
-    case 'MYPOSTS_LOADED':
-      return {
-        ...state,
-        myPosts: action.payload,
-        loading: false
-      }
-    
+  
 
     case "SHOW_POST":
       return {...state,

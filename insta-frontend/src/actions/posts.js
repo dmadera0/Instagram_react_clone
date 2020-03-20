@@ -9,17 +9,6 @@ export const getPosts = () =>{
   }
 }
 
-export const myPosts = () =>{
-  return ( dispatch ) => {
-    dispatch({type: 'MYPOSTS_LOADING'})
-      fetch('/myindex')
-      .then(resp => resp.json())
-      .then(Posts => {
-        debugger;
-        dispatch({type: "MYPOSTS_LOADED", payload: Posts})
-      })
-  }
-}
 
 export const showPost = (id) =>{
   return ( dispatch ) => {

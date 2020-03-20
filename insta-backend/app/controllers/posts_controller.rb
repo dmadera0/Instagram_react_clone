@@ -3,17 +3,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    binding.pry
+    # binding.pry
     @posts = Post.all
     render json: @posts.order(created_at: :desc)
-  end
-
-  def myindex
-    # binding.pry
-    @user = current_user
-    if @user 
-      render json: @user.posts(created_at: :desc)
-    end
   end
 
   # GET /posts/1

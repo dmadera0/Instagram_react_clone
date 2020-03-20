@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-  skip_before_action :verified_user, only: [ :create, :destroy]
+  skip_before_action :verified_user, only: [ :create, :destroy, :myindex]
   def create
     # binding.pry
     @user = User.find_by(username: params[:username])
@@ -13,8 +13,9 @@ class SessionController < ApplicationController
       end
   end 
 
+
   def destroy 
-    binding.pry
+    # binding.pry
     session.delete("user_id")
     session[:user_id] = nil 
   end 

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
-  get '/myindex', to: 'posts#myindex', as: 'myindex'
   get '/signin', to: 'session#new', as: 'signin'
   post '/session', to: 'session#create', as: 'session'
   delete '/logout' => 'session#destroy'
