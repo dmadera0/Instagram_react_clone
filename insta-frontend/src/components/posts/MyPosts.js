@@ -7,7 +7,7 @@ class MyPosts extends Component {
     // console.log(this.props.posts.sort( (a,b) => (a.id) > (b.id) ? 1 : -1))
 
     if(this.props.posts) {
-      const Myposts = this.props.posts.map( post => <MyPost key={post.id} id={post.id} user_id={this.props.user_id} location={post.location} content={post.content} image={post.image} user={this.props.user} /> );
+      const Myposts = this.props.posts.map( post => <MyPost key={post.id} id={post.id}  location={post.location} content={post.content} image={post.image} user={this.props.user} /> );
       
       return(
       <div>

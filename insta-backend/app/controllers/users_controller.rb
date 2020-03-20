@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [ :update, :destroy]
+  skip_before_action :set_user, only: [ :update, :destroy]
 
   # GET /users
   def index

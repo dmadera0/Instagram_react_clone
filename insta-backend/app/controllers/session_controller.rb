@@ -14,20 +14,12 @@ class SessionController < ApplicationController
   end 
 
   def destroy 
-    # binding.pry
+    binding.pry
     session.delete("user_id")
     session[:user_id] = nil 
   end 
 
   private 
-
-  def authenticated
-    !!current_user
-  end
-
-  def current_user
-    User.find_by(id: session[:user_id])
-  end
 
   def user_params
     params.permit(:username, :password)

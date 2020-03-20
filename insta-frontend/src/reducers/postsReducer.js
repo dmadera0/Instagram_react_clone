@@ -1,4 +1,4 @@
-export default (state = { posts:[], currentPost: '', loading: false}, action ) => {
+export default (state = { posts:[], myPosts:[], currentPost: '', loading: false}, action ) => {
   switch(action.type){
 
     case "LOADING_POSTS":
@@ -11,6 +11,19 @@ export default (state = { posts:[], currentPost: '', loading: false}, action ) =
         posts: action.payload,
         loading: false
       }
+
+    case "MYPOSTS_LOADING":
+      return {
+        ...state,
+        loading: true
+      }
+    case 'MYPOSTS_LOADED':
+      return {
+        ...state,
+        myPosts: action.payload,
+        loading: false
+      }
+    
 
     case "SHOW_POST":
       return {...state,

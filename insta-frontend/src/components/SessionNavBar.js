@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux'
+// impo
 const link = {
   width: '100px',
   padding: '12px',
@@ -8,6 +9,10 @@ const link = {
   background: 'lightblue',
   textDecoration: 'none',
   color: 'white',
+}
+
+function handleOnHome() {
+
 }
 
 const NavBar = (props) => {
@@ -22,6 +27,7 @@ const NavBar = (props) => {
         background: 'white',
         color: 'black'
       }}
+      onCLick={handleOnHome}
     ><span role="img">☖</span></NavLink> | 
 
       <NavLink to='/posts/new' style={link}

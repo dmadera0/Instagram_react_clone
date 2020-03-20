@@ -1,15 +1,18 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
+  skip_before_action :authenticated, only: [:show, :update, :destroy]
 
   # GET /posts
   def index
     @posts = Post.all
-
     render json: @posts.order(created_at: :desc)
+  end
 
-    # if current_user 
-    #   render json: current_user.posts.order(created_at: :desc)
-    # end
+  def myindex
+    # binding.pry
+    @user = current_user
+    if @user 
+      render json: @user.posts(created_at: :desc)
+    end
   end
 
   # GET /posts/1
