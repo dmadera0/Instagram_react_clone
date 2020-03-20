@@ -9,7 +9,7 @@ class Posts extends Component {
     }
     else {
       
-      const allPosts = this.props.posts.map( (post, i)  => <Post key={i} id={post.id} user_id={post.user.id} location={post.location} content={post.content} image={post.image} user={post.user}/> )
+      const allPosts = this.props.posts.map( (post, i)  => <Post key={i} id={post.id}  location={post.location} content={post.content} image={post.image} user={post.user}/> )
       document.title = "Feed"
       
     return(
