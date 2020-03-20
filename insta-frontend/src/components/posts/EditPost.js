@@ -3,11 +3,12 @@ import { connect } from 'react-redux'
 import { useHistory, Link} from "react-router-dom";
 import { toEdit } from '../../actions/posts'
 
+
 function EditPost(props) {
   // let { location, Image, Content } = props.post 
   let history = useHistory();  
   const [LOCATION, setLocation] = useState("");
-  const [ IMAGE, setImage] = useState("");
+  // const [ IMAGE, setImage] = useState("");
   const [ CONTENT, setContent] = useState("");
   console.log(props.post)
   function handleOnSubmit(event) {

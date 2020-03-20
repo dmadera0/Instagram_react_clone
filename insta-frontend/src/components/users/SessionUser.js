@@ -15,6 +15,7 @@ class SessionUser extends Component {
         const {username, image, posts, id} = this.props.user
         const profilePic = <img src={image} width="300" alt=""/> 
         document.title = username
+        const myposts = this.props.posts.filter( p => p.user.id === this.props.user.id)
         return(
         <div className="SessionUser"> 
           {<br></br>}
@@ -22,17 +23,18 @@ class SessionUser extends Component {
           {this.props.loading ? <h3>loading</h3> : username}{<br></br>}
           {<hr></hr>}
           {this.props.loading ? <h3>loading</h3> : 
-          <MyPost posts={posts} user={this.props.user} user_id={id}/> }
+          <MyPost posts={myposts} user={this.props.user} user_id={id}/> }
         </div>)
     }
   }
 }
 
 const mapStateToProps = state => {
-  // console.log(state.users.loading, state.users.currentUser)
+  console.log(state.posts.posts)
   
   return {
     user: state.users.currentUser,
+    posts: state.posts.posts,
     loading: state.users.loading
   }
 }

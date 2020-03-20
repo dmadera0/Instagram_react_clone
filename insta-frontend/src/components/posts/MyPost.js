@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory, Link} from "react-router-dom";
 import {connect } from 'react-redux'
 import { showPost, deletePost, editPost } from '../../actions/posts'
-
+import { showUser } from '../../actions/users'
 function MyPost(props) {
   const [ like, setLike] = useState('♡')
   let history = useHistory()
@@ -15,7 +15,7 @@ function MyPost(props) {
   function handleOnDelete() {
     // debugger
     props.deletePost(props.id)
-    history.push('/feed')
+    history.push('/home')
   }
 
   function handleOnEdit() {
@@ -40,4 +40,4 @@ function MyPost(props) {
 
 
 
-export default connect(null, {showPost, deletePost})(MyPost)
+export default connect(null, {showPost, deletePost, showUser})(MyPost)
