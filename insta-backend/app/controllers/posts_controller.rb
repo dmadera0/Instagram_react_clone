@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticated, only: [:show, :update, :destroy]
+  skip_before_action :verified_user, only: [:show, :update, :destroy, :myindex, :index]
 
   # GET /posts
   def index
+    binding.pry
     @posts = Post.all
     render json: @posts.order(created_at: :desc)
   end

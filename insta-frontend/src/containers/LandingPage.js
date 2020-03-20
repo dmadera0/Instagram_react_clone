@@ -20,9 +20,8 @@ function LandingPage(props) {
     user.append("username", username)
     user.append("password", password)
     props.getUser(user)
-    props.myPosts()
-
     history.push("/feed");
+    // props.myPosts()
     }
   }
 
