@@ -78,8 +78,7 @@ export const  logOut = ( user ) => {
   return ( dispatch ) => {
     dispatch({type: "LOG_OUT"}, user)
     // debugger;
-      fetch(`/logout`
-      , {
+      fetch(`/logout`, {
         method: 'DELETE',
         body: user,
         header:{

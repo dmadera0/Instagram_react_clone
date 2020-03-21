@@ -40,24 +40,7 @@ export const createPost = ( post) => {
   }
 }
 
-// export const editPost = (id, post) => {
-//   return (dispatch) => {
-//     dispatch({type: "EDIT_POST"})
-//     fetch(`posts/${id}`, {
-//       method: 'PATCH',
-//       body: post,
-//       header:{
-//         "Content-Type": 'multipart/form-data'
-//       }
-//     })
-//     .then( resp => resp.json())
-    
-//     .then( editedPost => {
-//       debugger
-//       return dispatch({type: "EDITED_POST", payload: editedPost})
-//     })
-//   }
-// }
+
 
 export const toEdit = (id, post) => {
   return (dispatch) => {
@@ -81,7 +64,7 @@ export const toEdit = (id, post) => {
 export const deletePost = (id) => {
   return (dispatch) => {
     dispatch({type: "DELETE_POST"})
-    fetch(`posts/${id}`, {
+    fetch(`/posts/${id}`, {
       method: 'DELETE',
       headers:{
         "Content-Type": 'application/json'
