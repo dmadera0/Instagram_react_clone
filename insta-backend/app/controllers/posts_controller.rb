@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  skip_before_action :verified_user, only: [:show, :update, :destroy, :myindex, :index]
-
+  skip_before_action :user_is_authenticated, only: [:show, :update, :destroy, :index]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   # GET /posts
   def index
     # binding.pry
