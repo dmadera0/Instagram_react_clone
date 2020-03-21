@@ -37,7 +37,7 @@ function SignUp(props) {
   document.title = "Sign Up"
   return(
       <div>
-        <h1>Welcome to Instagram</h1>
+        <h1>Welcome to Instagram</h1>{<br></br>}
         <h3>All fields required</h3>
         <form onSubmit={handleOnSubmit}>
             <label>Username: </label>
@@ -47,12 +47,12 @@ function SignUp(props) {
             <label>Number: </label>
             <input type="number"name="phoneNum" onChange={e => setPhoneNum(e.target.value)} /><br></br>
             <label>Image: </label>
-            <input type="file" onChange={e => setImage(e.target.files[0])} name="image" accept="image/png, image/jpeg"/><br></br>
+            <input  type="file" onChange={e => setImage(e.target.files[0])} name="image" accept="image/png, image/jpeg"/><br></br>
             <label>password: </label>
             <input type="password" name="password" onChange={e => setPassword(e.target.value)} /><br></br>
-            <input type="submit" value="Sign Up"/>
-          </form>
-          <button onClick={logInForm}>Or Log In</button>
+            <input className="btn btn-primary" type="submit" value="Sign Up"/>
+          </form>{<br></br>}
+          <button className="btn btn-primary" onClick={logInForm}>Or Log In</button>
       </div>
     )
 }

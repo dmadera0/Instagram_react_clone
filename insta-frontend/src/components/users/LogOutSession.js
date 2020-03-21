@@ -22,7 +22,7 @@ function LogOutSession(props) {
     {<br></br>}
     {<br></br>}
     {<br></br>}
-    <button onClick={logOut}>Log Out</button>
+    <button className="btn btn-primary" onClick={logOut}>Log Out</button>
   </div>
   )}
 }
