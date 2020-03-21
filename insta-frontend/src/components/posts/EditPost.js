@@ -15,7 +15,7 @@ function EditPost(props) {
     event.preventDefault();
     let Post = new FormData();
     Post.append("location", LOCATION)
-    Post.append("image", props.post.image)
+    // Post.append("image", props.post.image)
     Post.append( "content", CONTENT)
     Post.append("user_id", props.user.id)
     props.toEdit(props.post.id, Post)
@@ -36,7 +36,7 @@ function EditPost(props) {
         <label>Location</label>
         <input type="text" onChange={e => setLocation(e.target.value)} name="location"/><br></br>
         <label>Image:</label>
-        {/* {props.loading ? "Loading" : <img src={props.post.image} width="400" alt=""/>}{<br></br>} */}
+        {props.loading ? "Loading" : <img src={props.post.image} width="400" alt=""/>}{<br></br>}
         <label>Content</label>
         <input type="text" onChange={e => setContent(e.target.value)} name="content"/><br></br>
           <input type="submit"/>

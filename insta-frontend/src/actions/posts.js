@@ -62,7 +62,7 @@ export const createPost = ( post) => {
 export const toEdit = (id, post) => {
   return (dispatch) => {
     dispatch({type: "EDIT_POST"})
-    fetch(`posts/${id}`, {
+    fetch(`/posts/${id}`, {
       method: 'PATCH',
       body: post,
       header:{
