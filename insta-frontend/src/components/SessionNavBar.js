@@ -23,8 +23,7 @@ const NavBar = (props) => {
       activeStyle={{
         background: 'white',
         color: 'black'
-      }}
-    ><span role="img" >☖</span></NavLink> | 
+      }}><span role="img" >☖</span></NavLink> | 
 
       <NavLink to='/posts/new' style={link}
       activeStyle={{
@@ -43,16 +42,14 @@ const NavBar = (props) => {
       activeStyle={{
         background: 'white',
         color: 'black'
-      }}
-    >✎</NavLink> | 
+      }}><span role="img">✎</span></NavLink> | 
 
       <NavLink to='/logout'exact
       style={link}
       activeStyle={{
         background: 'white',
         color: 'black'
-      }}
-    >◉</NavLink> | 
+      }}><span role="img">◉</span></NavLink> 
     </div>
   ) 
 }

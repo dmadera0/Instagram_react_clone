@@ -34,7 +34,7 @@ export default (state = { posts:[], myPosts:[], currentPost: '', loading: false}
     case "CREATED_POST":
       return {
         ...state,
-        posts: [state.posts.concat(action.payload)], 
+        posts: state.posts.concat(action.payload), 
         loading: false
       }
 
@@ -62,7 +62,7 @@ export default (state = { posts:[], myPosts:[], currentPost: '', loading: false}
       // debugger;
       return {
         ...state,
-        posts: [state.posts.filter(p => p.id !== action.payload)],
+        posts: state.posts.filter(p => p.id !== action.payload),
         loading: false
       }
 

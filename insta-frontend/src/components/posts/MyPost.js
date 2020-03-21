@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { useHistory, Link} from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import {connect } from 'react-redux'
-import { showPost, deletePost, editPost } from '../../actions/posts'
+import { showPost, deletePost } from '../../actions/posts'
 import { showUser } from '../../actions/users'
 function MyPost(props) {
   const [ like, setLike] = useState('♡')
@@ -9,13 +9,13 @@ function MyPost(props) {
 
   function handleOnComments() {
     props.showPost(props.id)
-    
+    history.push(`/${props.user.username}/posts/${props.id}`)
   }
 
   function handleOnDelete() {
     // debugger
     props.deletePost(props.id)
-    
+    history.push("/home")
   }
 
   function handleOnEdit() {
@@ -30,7 +30,7 @@ function MyPost(props) {
       {props.content}{<br></br>}
       {<img src={props.image } width="400" alt="" onDoubleClick={ e => setLike('❤️')}/>}{<br></br>}
       <button onClick={ e => setLike('❤️')}>{like} </button> 
-      <Link  to={`/${props.user.username}/posts/${props.id}`} onClick={handleOnComments}>💬</Link>
+      <button onClick={handleOnComments}>💬</button>
       {props.loading ? "Loading" : <button onClick={handleOnEdit} >✎</button>}
       {props.loading ? "Loading" : <button onClick={handleOnDelete}>✐</button>}{<br></br>} 
       {<br></br>}

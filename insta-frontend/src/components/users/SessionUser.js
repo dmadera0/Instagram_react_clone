@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { myPosts } from '../../actions/posts'
+
 import MyPost from '../posts/MyPosts'
 import { Link } from "react-router-dom";
 class SessionUser extends Component {
@@ -23,7 +23,7 @@ class SessionUser extends Component {
           {this.props.loading ? <h3>loading</h3> : username}{<br></br>}
           {<hr></hr>}
           {this.props.postsLoading ? <h3>loading</h3> :
-          <MyPost posts={this.props.posts} user={this.props.user} /> }
+          <MyPost posts={this.props.posts.filter( p => p.user.id === this.props.user.id || p.user.id !== undefined )} user={this.props.user} /> }
         </div>)
     }
   }
@@ -34,9 +34,8 @@ const mapStateToProps = state => {
   
   return {
     user: state.users.currentUser,
-    posts: state.posts.posts,
-    myPosts: state.posts.myPosts,
     loading: state.users.loading,
+    posts: state.posts.posts,
     postsLoading: state.posts.loading
   }
 }
