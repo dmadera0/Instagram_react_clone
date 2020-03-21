@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     
       if @user && @user.authenticate(params[:password])  
         session[:user_id] = @user.id
-        binding.pry
+        # binding.pry
         render json: @user
       else 
         render json: @user.errors, status: :unprocessable_entity
