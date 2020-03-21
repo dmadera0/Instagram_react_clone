@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import React, { useState } from 'react';
+
 import { connect } from 'react-redux'
 import { getUser } from '../actions/users'
 
@@ -29,19 +29,23 @@ function LandingPage(props) {
     history.push("/signup")
   }
   document.title = "Welcome"
-  return(
-      <div>
+  return(<>
           <h1>Welcome to Instagram</h1>
           
-          <form onSubmit={handleOnSubmit}>
-            <label>User name</label>
+        <form onSubmit={handleOnSubmit}>
+          <div className="form-group">
+            <label>User name: </label>
             <input type="text" name="username" onChange={ e => setUsername(e.target.value)}/><br></br>
-            <label>password</label>
+          </div> 
+          <div className="form-group">
+            <label>password:</label>
             <input type="password" name="password" onChange={e => setPassword(e.target.value)}/><br></br>
-            <input type="submit" value="Log In" className="btn btn-primary" />
-          </form>
-          <button onClick={signUpForm}>Sign Up</button>
-      </div>
+          </div>
+            <input type="submit" value="Log In" className="btn btn-primary" />{<br></br>}
+
+        </form>{<br></br>}
+          <button className="btn btn-primary" onClick={signUpForm}>Sign Up</button>
+    </>
   )
 }
 

@@ -28,7 +28,7 @@ class App extends Component {
     if (this.props.user.error || undefined ) {
       return (
         <div className="App">
-          
+          <div className="container-fluid">
           <Router >  
             <Link to="/">Log In or Sign Up</Link>
             <Switch >  
@@ -36,6 +36,7 @@ class App extends Component {
               <Route exact path="/signup" component={SignUp} />
             </Switch>
           </Router>
+          </div>
         </div>
       ) 
     
@@ -44,7 +45,7 @@ class App extends Component {
           
           return (
             <div className="App">
-              
+              <div className="container-fluid">
               <Router >   
                 <Route path="/home" render={props => <NavBar {...props} />} />
                 <Route path="/feed" render={props => <NavBar {...props} />} />
@@ -67,6 +68,7 @@ class App extends Component {
                  
                 </Switch>
               </Router>
+              </div>
             </div>)
         }
       }
