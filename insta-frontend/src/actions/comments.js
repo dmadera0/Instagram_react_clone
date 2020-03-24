@@ -1,19 +1,11 @@
-
-
-export const createPost = ( post) => {
+export const getComments = () =>{
   return ( dispatch ) => {
-    dispatch({type: "CREATE_POST"}, post)
-    fetch("/posts", {
-      method: 'POST',
-      body: post,
-      header: {
-        "Content-Type": 'multipart/form-data'
-      }
-    })
-    .then( resp => resp.json())
-    .then(newPost => {
-      debugger
-      return dispatch({type: "CREATED_POST", payload: newPost})
-    })
+    dispatch({type: 'LOADING_COMMENTS'})
+      fetch('/comments')
+      .then(resp => resp.json())
+      .then(Comments => {
+        // debugger;
+        dispatch({type: "COMMENTS_LOADED", payload: Comments})
+      })
   }
 }

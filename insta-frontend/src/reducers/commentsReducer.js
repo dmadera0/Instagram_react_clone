@@ -1,16 +1,21 @@
-// export default (state = { posts:[], currentPost: '', loading: false}, action ) => {
-//   switch(action.type){
-//     case "CREATE_Comment":
-//       return{
-//         ...state,
-//         loading: true
-//       }
+export default (state = { comments:[], currentComment: '', loading: false}, action ) => {
+  switch(action.type){
 
-//     case "CREATED_COMMENT":
-//       return {
-//         posts: [...state.posts, action.payload], 
-//         loading: false
-//       }
+    case "LOADING_COMMENTS":
+      console.log("loading comments")
+      return {
+        ...state,
+        loading: true
+      }
+    case 'COMMENTS_LOADED':
+      // debugger;
+      console.log("comments loaded")
+      return {
+        comments: action.payload,
+        loading: false
+      }
 
-//   }
-// }
+    default: 
+    return state
+  }
+}

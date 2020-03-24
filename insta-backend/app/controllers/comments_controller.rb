@@ -4,10 +4,12 @@ class CommentsController < ApplicationController
   # GET /comments
   def index
     @comments = Comment.all
+    render json: @comments.order(created_at: :desc)
   end
 
   # GET /comments/1
   def show
+    render json: @comment
   end
 
   # GET /comments/new

@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
-import Comments from './Comments'
+// import Comments from './Comments'
+import Comments from '../comments/Comments'
+
+import CommentInput from '../comments/CommentInput'
 class PostShow extends Component {
  
-
   state = {
     content: "",
     user_id: "",
@@ -45,6 +47,7 @@ class PostShow extends Component {
     if(!this.props.user ||  undefined){
       return(<div>{<br></br>}{<br></br>} {<br></br>} {<br></br>}User not found! <Link to="/">Log In</Link></div>)
     } else {
+      
       document.title = "Show post"
       return(<div>
         {<br></br>}
@@ -56,8 +59,9 @@ class PostShow extends Component {
           <input type="tex" onChange={this.handleOnChange} value={this.state.content}/>{<br></br>}
           <button type="submit" value="Comment"  >Comment</button>
         </form>{<br></br>}
+        <CommentInput />
         
-        {this.props.loading ? "Loading" : < Comments comments={this.props.post.comments}/>}
+        {this.props.loading? "Loading" : < Comments comments={this.props.post.comments.filter( c => c.post_id === this.props.post.id)}/>}
         
       </div>
       )
@@ -70,8 +74,9 @@ const mapStateToProps = state => {
   return {
     user: state.users.currentUser,
     post: state.posts.currentPost,
-    // comment: state.posts.currentPost.comments,
-    loading: state.posts.loading
+    loading: state.posts.loading,
+    comment: state.comments.comments,
+    loadingComments: state.comments.loading
   }
 }
 

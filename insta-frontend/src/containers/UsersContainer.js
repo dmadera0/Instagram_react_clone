@@ -8,9 +8,9 @@ import Users from '../components/users/Users'
 
 class UsersCointainer extends Component {
 
-  componentDidMount(){
-    this.props.getUsers()
-  }
+  // componentDidMount(){
+  //   this.props.getUsers()
+  // }
 
   render(){
     return(
