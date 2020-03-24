@@ -61,7 +61,7 @@ class PostShow extends Component {
         </form>{<br></br>}
         <CommentInput />
         
-        {this.props.loading? "Loading" : < Comments comments={this.props.post.comments.filter( c => c.post_id === this.props.post.id)}/>}
+        {this.props.loading? "Loading" : < Comments comments={this.props.comments.filter( c => c.post_id === this.props.post.id)}/>}
         
       </div>
       )
@@ -70,12 +70,12 @@ class PostShow extends Component {
 }
 
 const mapStateToProps = state => {
-   console.log(state.users.loading, state.posts.currentPost)
+   console.log(state.users.loading, state.comments.comments)
   return {
     user: state.users.currentUser,
     post: state.posts.currentPost,
     loading: state.posts.loading,
-    comment: state.comments.comments,
+    comments: state.comments.comments,
     loadingComments: state.comments.loading
   }
 }
