@@ -23,7 +23,7 @@ class SessionUser extends Component {
           {this.props.loading ? <h3>loading</h3> : username}{<br></br>}
           {<hr></hr>}
           {this.props.postsLoading ? <h3>loading</h3> :
-          <MyPost posts={this.props.posts.filter( p => p.user.id === this.props.user.id || p.user.id !== undefined )} user={this.props.user} /> }
+          <MyPost posts={this.props.posts.filter( p => p.user.id === this.props.user.id )} user={this.props.user} /> }
         </div>)
     }
   }

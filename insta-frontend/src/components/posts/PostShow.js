@@ -1,47 +1,14 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
-// import Comments from './Comments'
 import Comments from '../comments/Comments'
 
 import CommentInput from '../comments/CommentInput'
 class PostShow extends Component {
  
-  state = {
-    content: "",
-    user_id: "",
-    post_id: ""
-  }
+  
 
-  handleOnSubmit = (event) => {
-    event.preventDefault()
-     
-      let comment = new FormData();
-      comment.append("content", this.state.content)
-      comment.append("user_id", this.state.user_id)
-      comment.append("post_id", this.state.post_id)
-    console.log(comment)
-    fetch("/comments", {
-        method: 'POST',
-        body: comment,
-        header: {
-          "Content-Type": 'multipart/form-data'
-        }
-    })
-    this.setState({
-      content: ""
-    })
-
-  }
-
-  handleOnChange = (event) => {
-    this.setState({
-      content: event.target.value,
-      user_id: this.props.user.id,
-      post_id: this.props.post.id
-    }, console.log(this.state.content)) 
-    
-  }
+  
 
   render(){
     if(!this.props.user ||  undefined){
@@ -54,11 +21,7 @@ class PostShow extends Component {
         {this.props.loading ? "Loading" : this.props.post.location}{<br></br>}
         {this.props.loading ? "Loading" : <img src={this.props.post.image} width="600" alt=""/>}{<br></br>}
         {this.props.loading ? "Loading" : this.props.post.content}{<br></br>}
-        <form onSubmit={this.handleOnSubmit }>
-          <label>Comment:</label>
-          <input type="tex" onChange={this.handleOnChange} value={this.state.content}/>{<br></br>}
-          <button type="submit" value="Comment"  >Comment</button>
-        </form>{<br></br>}
+        {<br></br>}
         <CommentInput />
         
         {this.props.loading? "Loading" : < Comments comments={this.props.comments.filter( c => c.post_id === this.props.post.id)}/>}

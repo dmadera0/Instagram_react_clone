@@ -15,6 +15,19 @@ export default (state = { comments:[], currentComment: '', loading: false}, acti
         loading: false
       }
 
+      case "CREATE_COMMENT":
+        return{
+          ...state,
+          loading: true
+        }
+  
+      case "CREATED_COMMENT":
+        return {
+          ...state,
+          comments: state.comments.concat(action.payload), 
+          loading: false
+        }
+
     default: 
     return state
   }

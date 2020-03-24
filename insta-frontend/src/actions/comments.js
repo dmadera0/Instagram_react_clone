@@ -9,3 +9,21 @@ export const getComments = () =>{
       })
   }
 }
+
+export const createComment = ( c ) => {
+  return ( dispatch ) => {
+    dispatch({type: "CREATE_COMMENT"}, c)
+    fetch("/comments", {
+      method: 'POST',
+      body: c,
+      header: {
+        "Content-Type": 'multipart/form-data'
+      }
+    })
+    .then( resp => resp.json())
+    .then(newPost => {
+      // debugger
+      return dispatch({type: "CREATED_COMMENT", payload: newPost})
+    })
+  }
+}
