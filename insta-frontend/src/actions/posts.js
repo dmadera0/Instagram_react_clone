@@ -55,7 +55,7 @@ export const toEdit = (id, post) => {
     .then( resp => resp.json())
     
     .then( editedPost => {
-      debugger
+      // debugger
       return dispatch({type: "EDITED_POST", payload: editedPost})
     })
   }
