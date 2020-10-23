@@ -45,6 +45,7 @@ class App extends Component {
           
           return (
             <div className="App">
+              <header>NeatureGram</header>
               <div className="container-fluid">
               <Router >   
                 <Route path="/home" render={props => <NavBar {...props} />} />
@@ -61,7 +62,7 @@ class App extends Component {
                   <Route exact path="/posts/new" component={PostInput} />
                   <Route exact path="/users/edit" component={EditSessionUser} />
                   <Route exact path="/logout" component={LogOutSession} />
-                  
+
                   {/* <Route path={`/:usersname/posts/:postsId/me`} component={PostShowMe} /> */}
                   <Route exact path={`/:usersname/posts/:postsId`} component={ PostShow } />
                   <Route exact path={`/posts/:postsId/edit`} component={ EditPost } />

@@ -37,7 +37,7 @@ function SignUp(props) {
   document.title = "Sign Up"
   return(
       <div>
-        <h1>Welcome to Instagram</h1>{<br></br>}
+        <h1>Welcome to Neaturegram</h1>{<br></br>}
         <h3>All fields required</h3>
         <form onSubmit={handleOnSubmit}>
             <label>Username: </label>

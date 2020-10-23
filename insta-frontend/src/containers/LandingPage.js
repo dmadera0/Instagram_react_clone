@@ -30,7 +30,7 @@ function LandingPage(props) {
   }
   document.title = "Welcome"
   return(<>
-          <h1>Welcome to Instagram</h1>{<br></br>}
+          <h1>Welcome to NeatureGram</h1>{<br></br>}
           
         <form onSubmit={handleOnSubmit}>
           <div className="form-group">

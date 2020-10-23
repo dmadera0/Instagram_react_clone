@@ -14,7 +14,7 @@ function Post(props) {
 
 
   return(
-    <div>
+    <div className = 'imagepost'>
       {<br></br>}
       {props.content}{<br></br>}
       {<img src={props.image } width="400" alt="" onDoubleClick={ e => setLike('❤️')}/>}{<br></br>}

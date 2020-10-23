@@ -14,7 +14,8 @@ class Posts extends Component {
       
     return(
       <div>
-        <ul>
+        
+        <ul className = 'all-posts'>
           {this.props.loading ? <h3>...loading...</h3> : allPosts}
         </ul>
       </div>

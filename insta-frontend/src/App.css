@@ -7,6 +7,19 @@
   width: 100%;
 }
 
+header{
+  text-align: center;
+  font-size: xxx-large;
+  font-family: cursive;
+  font-stretch: expanded;
+  font-weight: 800;
+  color: darkgreen;
+}
+
+body{
+  background-color:rgba(84, 150, 66, 0.442);
+}
+
 .form-control {
   display: block;
   width: 98%;
@@ -32,5 +45,13 @@
   }  
 }
 
+.all-posts{
+  display:flex;
+  flex-direction: row;
+}
+
+.imagepost{
+  padding: 20px;
+  }
 
 
